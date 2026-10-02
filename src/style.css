@@ -12,17 +12,17 @@
 }
 
 :root {
-  /* Color Palette - Solid Dark Slate Gray (#0f172a - Slate 900) */
-  --bg-primary: #0f172a;
-  --bg-secondary: #0f172a;
-  --bg-tertiary: #1e293b;
-  --bg-card: #0f172a;
-  --bg-card-hover: #1e293b;
-  --bg-card-subtle: #0f172a;
+  /* Color Palette - Solid Corporate Dark Slate (#0D1117) */
+  --bg-primary: #0D1117;
+  --bg-secondary: #0D1117;
+  --bg-tertiary: #161B22;
+  --bg-card: #161B22;
+  --bg-card-hover: #161B22;
+  --bg-card-subtle: #161B22;
 
-  /* Sharp Rectangle Borders & Crisp Shadows (No Glow) */
-  --border-glass: #334155;
-  --border-glass-hover: #475569;
+  /* Subtle Thin Borders (No Glow, Clean Enterprise) */
+  --border-glass: #30363D;
+  --border-glass-hover: #8B949E;
   --border-glow-cyan: transparent;
   --border-glow-purple: transparent;
   --shadow-glass: none;
@@ -30,39 +30,39 @@
   --shadow-glow-blue: none;
   --shadow-glow-purple: none;
 
-  /* Flat Professional Tech Accents */
-  --cyan: #38bdf8;        /* Sober Accent Light Sky Blue */
-  --cyan-dark: #0284c7;
-  --blue: #2563eb;        /* Flat Solid Tech Blue */
-  --blue-dark: #1d4ed8;
-  --indigo: #4f46e5;
-  --purple: #7c3aed;
-  --violet: #8b5cf6;
-  --emerald: #10b981;
-  --rose: #ef4444;
-  --amber: #f59e0b;
-  --gold: #f59e0b;
+  /* Clean Standard Blue Tech Accent (#2F81F7) */
+  --cyan: #2F81F7;
+  --cyan-dark: #1F6FEB;
+  --blue: #2F81F7;
+  --blue-dark: #1F6FEB;
+  --indigo: #2F81F7;
+  --purple: #2F81F7;
+  --violet: #2F81F7;
+  --emerald: #3FB950;
+  --rose: #F85149;
+  --amber: #D29922;
+  --gold: #D29922;
 
-  /* Strict 3-Color Typography Standard */
-  --text-primary: #ffffff;   /* Pure White Main Headings */
-  --text-secondary: #94a3b8; /* Light Gray Normal Paragraphs */
-  --text-muted: #64748b;
-  --text-accent: #38bdf8;    /* Sober Single Accent Light Sky Blue */
-  --text-inverse: #0f172a;
+  /* Strict Typography Standard */
+  --text-primary: #F0F6FC;   /* Off-White Main Headings */
+  --text-secondary: #8B949E; /* Muted Gray Descriptions & Sub-text */
+  --text-muted: #8B949E;
+  --text-accent: #2F81F7;    /* Clean Standard Blue Highlight */
+  --text-inverse: #0D1117;
 
   /* Typography Fonts */
   --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-display: 'Outfit', sans-serif;
   --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
 
-  /* Sharp Rectangle Radii (Flat 4px Borders) */
-  --radius-sm: 4px;
-  --radius-md: 4px;
-  --radius-lg: 4px;
-  --radius-full: 4px;
+  /* Subtle Clean Radii (6px) */
+  --radius-sm: 6px;
+  --radius-md: 6px;
+  --radius-lg: 6px;
+  --radius-full: 6px;
   --transition-fast: 0.15s ease;
-  --transition-normal: 0.25s ease;
-  --transition-slow: 0.4s ease;
+  --transition-normal: 0.2s ease;
+  --transition-slow: 0.3s ease;
 }
 
 /* Light Theme Variables */
@@ -97,7 +97,7 @@ html {
 
 body {
   font-family: var(--font-main);
-  background-color: #0f172a !important;
+  background-color: #0D1117 !important;
   color: var(--text-secondary);
   line-height: 1.6;
   overflow-x: hidden;
@@ -114,26 +114,34 @@ body {
   background: var(--bg-primary);
 }
 ::-webkit-scrollbar-thumb {
-  background: #334155;
+  background: #30363D;
   border-radius: var(--radius-sm);
   border: 2px solid var(--bg-primary);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #475569;
+  background: #8B949E;
 }
 
 /* Selection */
 ::selection {
-  background: #2563eb;
+  background: #2F81F7;
   color: #ffffff;
 }
 
-/* --- Three.js Background Canvas & Blur Spots Disabled for Solid Clean Background --- */
+/* --- Remove Any Glowing Radial Gradients or Background Blur Spots --- */
 #bg-canvas,
 .hero-3d-bg-wrap,
+.hero-3d-bg-portrait,
+.bg-portrait-img,
+.bg-portrait-vignette,
 .ambient-glow,
 .bg-portrait-glow-aura {
   display: none !important;
+}
+
+/* Universal Zero Glows */
+*, *::before, *::after {
+  text-shadow: none !important;
 }
 
 /* --- Clean Native Cursor Standards --- */
@@ -162,12 +170,13 @@ a, button, input[type="submit"], input[type="button"], .btn, .icon-btn, .filter-
 
 /* --- Typography Helpers (Clean High-Contrast, Zero Neon Gradients) --- */
 .gradient-text-hero {
-  color: #f8fafc;
+  color: #F0F6FC;
   background: none;
   -webkit-background-clip: initial;
   -webkit-text-fill-color: initial;
   display: inline-block;
   font-weight: 800;
+  text-shadow: none !important;
 }
 
 body.light-theme .gradient-text-hero {
@@ -175,12 +184,13 @@ body.light-theme .gradient-text-hero {
 }
 
 .gradient-text-cyan {
-  color: #38bdf8;
+  color: #2F81F7;
   background: none;
   -webkit-background-clip: initial;
   -webkit-text-fill-color: initial;
   display: inline-block;
   font-weight: 700;
+  text-shadow: none !important;
 }
 
 body.light-theme .gradient-text-cyan {
@@ -201,12 +211,12 @@ body.light-theme .gradient-text-cyan {
   font-size: 0.78rem;
   letter-spacing: 2px;
   font-weight: 700;
-  color: #94a3b8;
+  color: #8B949E;
   text-transform: uppercase;
   margin-bottom: 12px;
   padding: 4px 12px;
-  background: #1e293b;
-  border: 1px solid #334155;
+  background: #161B22;
+  border: 1px solid #30363D;
   border-radius: var(--radius-sm);
 }
 
@@ -228,7 +238,7 @@ body.light-theme .section-kicker {
 .section-line {
   width: 44px;
   height: 2px;
-  background: #2563eb;
+  background: #2F81F7;
   margin: 14px auto 18px;
   border-radius: 0;
 }
@@ -241,10 +251,10 @@ body.light-theme .section-kicker {
   line-height: 1.6;
 }
 
-/* --- Sharp Rectangle Card Panels (Clean, Flat, Crisp Borders) --- */
+/* --- Clean Subtle Card Panels --- */
 .glass-panel {
-  background: var(--bg-card);
-  border: 1px solid var(--border-glass);
+  background: #161B22;
+  border: 1px solid #30363D;
   border-radius: var(--radius-lg);
   box-shadow: none;
   transition: border-color var(--transition-fast), background-color var(--transition-fast);
@@ -253,9 +263,9 @@ body.light-theme .section-kicker {
 }
 
 .glass-panel:hover {
-  border-color: #334155;
+  border-color: #8B949E;
   box-shadow: none;
-  background: var(--bg-card-hover);
+  background: #161B22;
 }
 
 body.light-theme .glass-panel:hover {
@@ -3004,19 +3014,21 @@ body.light-theme .resume-entry-sub { color: #2563eb; }
 }
 
 /* ===================================================================
-   STRICT MASTER THEME SYSTEM (PREMIUM TECH / SLATE 900 / SHARP RECTANGLES)
-   Requirement 1: Solid Dark Gray (#0f172a - Slate 900) Background, zero blur spots or floating neon circles.
-   Requirement 2: Sharp 4px Rectangle Layout with 1px solid #334155 border & box-shadow: none.
-   Requirement 3: Flat Buttons (Primary: Solid #2563eb, Secondary: Transparent outline #475569).
-   Requirement 4: Strict 3-Color Typography (#ffffff headings, #94a3b8 paragraphs, #38bdf8 accents).
+   CLEAN CORPORATE SLATE MASTER THEME SYSTEM
+   Requirement 1: Solid Dark Slate (#0D1117) Background, Zero Radial Gradients/Blur Spots.
+   Requirement 2: Main Headings #F0F6FC (Off-White), Description/Sub-text #8B949E (Muted Gray).
+   Requirement 3: Standard Clean Blue (#2F81F7) for Links, Highlighted Text, & Active States.
+   Requirement 4: Completely Disabled text-shadow and glowing box-shadows.
+   Requirement 5: Display Boxes (Patent, 3rd Year, Hindalco, etc.) & Cards Background #161B22 with Subtle Thin Border #30363D.
    =================================================================== */
 
-/* 1. Global Background Solid Slate 900 */
+/* 1. Global Solid Corporate Dark Slate Background */
 html, body, #main-content {
-  background-color: #0f172a !important;
-  color: #94a3b8 !important;
+  background-color: #0D1117 !important;
+  color: #8B949E !important;
 }
 
+/* Zero Blur Spots, Auras, or Glow Artifacts */
 #bg-canvas,
 .hero-3d-bg-wrap,
 .hero-3d-bg-portrait,
@@ -3027,7 +3039,7 @@ html, body, #main-content {
   display: none !important;
 }
 
-/* 2. Sharp Rectangle Borders (4px, 1px solid #334155, zero box-shadow) */
+/* 2. Display Boxes & Card Styling (#161B22 with Subtle Thin Border #30363D) */
 .glass-panel,
 .glass-card,
 .profile-card-modern,
@@ -3049,13 +3061,53 @@ html, body, #main-content {
 .stat-pill,
 .badge-pill,
 .form-input,
-.form-textarea {
-  background-color: #0f172a !important;
-  border: 1px solid #334155 !important;
-  border-radius: 4px !important;
+.form-textarea,
+.mobile-nav-drawer,
+.mobile-tab-btn,
+.vip-patent-card,
+.vip-pillar,
+.topic-chip,
+.exp-company-logo,
+.pillar-icon-box,
+.skill-icon-wrapper,
+.achieve-icon-wrap,
+.platform-logo,
+.info-icon-box,
+.social-circle-btn,
+.copy-btn,
+.icon-btn,
+.tab-pill {
+  background-color: #161B22 !important;
+  border: 1px solid #30363D !important;
+  border-radius: 6px !important;
   box-shadow: none !important;
 }
 
+/* Subtle Nested Inner Elements inside Cards */
+.terminal-body,
+.holo-code-terminal,
+.terminal-header,
+.about-terminal-footer,
+.profile-photo-container,
+.exp-highlight-item,
+.project-feature-list,
+.resume-body-content,
+.mobile-drawer-header,
+.mobile-drawer-footer,
+.drawer-close-btn,
+.badge-tag,
+.meta-chip,
+.tag,
+.achieve-pill,
+.project-media,
+.status-indicator-pill,
+.stat-divider {
+  background-color: #0D1117 !important;
+  border: 1px solid #30363D !important;
+  box-shadow: none !important;
+}
+
+/* Card Hover States: Clean, Subtle, No Glowing Shadows */
 .glass-panel:hover,
 .glass-card:hover,
 .profile-card-modern:hover,
@@ -3068,21 +3120,26 @@ html, body, #main-content {
 .achievement-card:hover,
 .platform-card:hover,
 .contact-info-card:hover,
-.stat-pill:hover {
-  border-color: #475569 !important;
+.stat-pill:hover,
+.topic-chip:hover {
+  border-color: #8B949E !important;
   box-shadow: none !important;
   transform: none !important;
 }
 
-/* 3. Flat Buttons (Primary: Solid #2563eb, Secondary: Outline #475569) */
+.stat-pill:hover {
+  border-color: #2F81F7 !important;
+}
+
+/* 3. Clean Standard Blue (#2F81F7) Buttons & Actions */
 .btn-glow-blue,
 .btn-primary,
 #submit-contact-btn {
-  background-color: #2563eb !important;
+  background-color: #2F81F7 !important;
   background-image: none !important;
-  border: 1px solid #2563eb !important;
+  border: 1px solid #2F81F7 !important;
   color: #ffffff !important;
-  border-radius: 4px !important;
+  border-radius: 6px !important;
   box-shadow: none !important;
   text-shadow: none !important;
 }
@@ -3090,8 +3147,8 @@ html, body, #main-content {
 .btn-glow-blue:hover,
 .btn-primary:hover,
 #submit-contact-btn:hover {
-  background-color: #1d4ed8 !important;
-  border-color: #1d4ed8 !important;
+  background-color: #1F6FEB !important;
+  border-color: #1F6FEB !important;
   color: #ffffff !important;
   box-shadow: none !important;
   transform: none !important;
@@ -3104,11 +3161,11 @@ html, body, #main-content {
 .icon-btn,
 .back-to-top-btn,
 .filter-tab-btn {
-  background-color: transparent !important;
+  background-color: #161B22 !important;
   background-image: none !important;
-  border: 1px solid #475569 !important;
-  color: #ffffff !important;
-  border-radius: 4px !important;
+  border: 1px solid #30363D !important;
+  color: #F0F6FC !important;
+  border-radius: 6px !important;
   box-shadow: none !important;
   text-shadow: none !important;
 }
@@ -3119,16 +3176,23 @@ html, body, #main-content {
 .btn-secondary:hover,
 .icon-btn:hover,
 .back-to-top-btn:hover,
-.filter-tab-btn:hover,
-.filter-tab-btn.active {
-  background-color: #1e293b !important;
-  border-color: #64748b !important;
-  color: #ffffff !important;
+.filter-tab-btn:hover {
+  background-color: #21262D !important;
+  border-color: #8B949E !important;
+  color: #F0F6FC !important;
   box-shadow: none !important;
   transform: none !important;
 }
 
-/* 4. Strict 3-Color Typography System */
+.filter-tab-btn.active,
+.mobile-tab-btn.active,
+.topic-chip.active {
+  background-color: #1F6FEB !important;
+  border-color: #2F81F7 !important;
+  color: #ffffff !important;
+}
+
+/* 4. Strict Typography System: Main Headings #F0F6FC (Off-White) */
 h1, h2, h3, h4, h5, h6,
 .hero-title,
 .section-title,
@@ -3146,13 +3210,18 @@ h1, h2, h3, h4, h5, h6,
 .profile-card-name,
 .exp-designation,
 .award-title,
-.stat-pill .stat-label {
-  color: #ffffff !important;
+.gradient-text-hero,
+.resume-name,
+.resume-entry-top,
+.drawer-title,
+.modal-title {
+  color: #F0F6FC !important;
   text-shadow: none !important;
   background: none !important;
   -webkit-text-fill-color: initial !important;
 }
 
+/* Description / Sub-text: #8B949E (Muted Gray) */
 p,
 .hero-description,
 .section-subtitle,
@@ -3171,16 +3240,24 @@ label,
 .status-desc,
 .exp-sub-row,
 .c-comment,
-.info-label {
-  color: #94a3b8 !important;
+.info-label,
+.role-static,
+.hero-tagline,
+.terminal-filename,
+.resume-contact-line,
+.resume-summary-text,
+.resume-bullets,
+.drawer-section-label,
+.bottom-tab-label {
+  color: #8B949E !important;
   text-shadow: none !important;
 }
 
+/* Accent & Highlights: Clean Standard Blue (#2F81F7) */
 strong,
 b,
 .role-dynamic,
 .gradient-text-cyan,
-.gradient-text-hero,
 .highlight,
 .tag-accent,
 .badge-text,
@@ -3189,11 +3266,55 @@ b,
 .c-keyword,
 .c-class,
 .c-fn,
-.email-link {
-  color: #38bdf8 !important;
+.email-link,
+.check-bullet,
+.project-origin,
+.achieve-metric,
+.terminal-tag,
+.resume-roles,
+.resume-sec-title,
+.resume-dates,
+.drawer-role,
+.logo-text-code,
+.cursor-blink,
+.section-line,
+.mouse-wheel,
+.nav-link:hover,
+.nav-link.active,
+.mobile-bottom-tab:hover,
+.mobile-bottom-tab.active,
+.modal-subtitle {
+  color: #2F81F7 !important;
   text-shadow: none !important;
   background: none !important;
   -webkit-text-fill-color: initial !important;
+}
+
+.section-line {
+  background: #2F81F7 !important;
+}
+
+.mouse-wheel {
+  background-color: #2F81F7 !important;
+}
+
+/* General Hyperlinks */
+a:not(.btn):not(.nav-link):not(.brand-logo):not(.mobile-tab-btn):not(.mobile-bottom-tab):not(.social-circle-btn) {
+  color: #2F81F7 !important;
+  text-decoration: none;
+}
+
+a:not(.btn):not(.nav-link):not(.brand-logo):not(.mobile-tab-btn):not(.mobile-bottom-tab):not(.social-circle-btn):hover {
+  text-decoration: underline;
+}
+
+/* Form Input Focus States */
+.form-input:focus,
+.form-textarea:focus {
+  border-color: #2F81F7 !important;
+  background-color: #0D1117 !important;
+  box-shadow: none !important;
+  outline: none !important;
 }
 
 /* ================= TOAST NOTIFICATIONS ================= */
@@ -3209,10 +3330,10 @@ b,
 }
 
 .toast {
-  background: #1e293b;
-  color: #ffffff;
-  border: 1px solid #334155;
-  border-radius: 4px;
+  background: #161B22 !important;
+  color: #F0F6FC !important;
+  border: 1px solid #30363D !important;
+  border-radius: 6px !important;
   padding: 12px 18px;
   display: flex;
   align-items: center;
@@ -3248,4 +3369,5 @@ b,
     justify-content: center;
   }
 }
+
 
