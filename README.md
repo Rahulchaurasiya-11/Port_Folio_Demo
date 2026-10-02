@@ -67,5 +67,5 @@ npm run build
 ---
 
 ## 📬 Contact & Direct Messages
-- **Email:** [rahulteam320@gmail.com](mailto:rahulteam320@gmail.com)
+- **Email:** [raXXXXXXXXX@gmail.com](mailto:rahulteam320@gmail.com)
 - **Phone:** +91 885800XXXX
