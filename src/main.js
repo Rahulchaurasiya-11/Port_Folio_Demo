@@ -83,13 +83,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // 5. Setup Project Modals
   setupProjectModals();
 
-  // 6. Setup Resume Modal & Print/PDF
-  setupResumeModal();
-
-  // 7. Setup Headshot Photo Upload / Swap
+  // 6. Setup Headshot Photo Upload / Swap
   setupHeadshotUpload();
 
-  // 8. Setup Contact Form & Clipboard
+  // 7. Setup Contact Form & Clipboard
   setupContactForm();
   setupClipboardButtons();
 
@@ -152,44 +149,10 @@ function setupTypewriter() {
 }
 
 /* ===================================================================
-   3. 3D CARD TILT EFFECT (Subtle & Desktop/Mouse Only)
+   3. CARD HOVER (Clean Flat Rectangle Standards)
    =================================================================== */
 function setup3DTilt() {
-  // Only apply 3D tilt on devices with mouse/fine pointer (never on touch screens to prevent jitter)
-  if (!window.matchMedia('(pointer: fine)').matches) return;
-
-  const tiltCards = document.querySelectorAll('[data-tilt], .hologram-card-3d');
-
-  tiltCards.forEach(card => {
-    card.addEventListener('mousemove', (e) => {
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-
-      const centerX = rect.width / 2;
-      const centerY = rect.height / 2;
-
-      // Subtle, refined professional tilt (max 4.5 deg)
-      const rotateX = ((y - centerY) / centerY) * -4.5;
-      const rotateY = ((x - centerX) / centerX) * 4.5;
-
-      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.015, 1.015, 1.015)`;
-    });
-
-    card.addEventListener('mouseleave', () => {
-      card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
-    });
-  });
-
-  // 3D Parallax Depth for Hero Background Portrait (subtle and smooth)
-  const heroBgPortrait = document.getElementById('hero-3d-bg-portrait');
-  if (heroBgPortrait) {
-    window.addEventListener('mousemove', (e) => {
-      const x = (e.clientX / window.innerWidth - 0.5) * 2;
-      const y = (e.clientY / window.innerHeight - 0.5) * 2;
-      heroBgPortrait.style.transform = `perspective(1200px) rotateY(${x * 6}deg) rotateX(${-y * 5}deg) translateX(${x * 12}px) translateY(${y * 8}px)`;
-    });
-  }
+  // Retain clean static rectangle cards without AI 3D distortion
 }
 
 /* ===================================================================
@@ -318,52 +281,6 @@ function setupProjectModals() {
   });
 }
 
-/* ===================================================================
-   7. RESUME MODAL & PRINT/DOWNLOAD
-   =================================================================== */
-function setupResumeModal() {
-  const resumeModal = document.getElementById('resume-modal');
-  const closeBtn = document.getElementById('close-resume-modal-btn');
-  const printBtn = document.getElementById('print-resume-btn');
-  const triggerBtns = [
-    document.getElementById('header-resume-btn'),
-    document.getElementById('hero-resume-btn'),
-    document.getElementById('mobile-resume-btn'),
-    document.getElementById('footer-resume-btn')
-  ];
-
-  function openResume() {
-    resumeModal?.classList.add('open');
-    resumeModal?.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closeResume() {
-    resumeModal?.classList.remove('open');
-    resumeModal?.setAttribute('aria-hidden', 'true');
-    document.body.style.overflow = '';
-  }
-
-  triggerBtns.forEach(btn => {
-    btn?.addEventListener('click', openResume);
-  });
-
-  closeBtn?.addEventListener('click', closeResume);
-
-  resumeModal?.addEventListener('click', (e) => {
-    if (e.target === resumeModal) closeResume();
-  });
-
-  window.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && resumeModal?.classList.contains('open')) {
-      closeResume();
-    }
-  });
-
-  printBtn?.addEventListener('click', () => {
-    window.print();
-  });
-}
 
 /* ===================================================================
    8. HEADSHOT PHOTO UPLOAD & PERSISTENCE
