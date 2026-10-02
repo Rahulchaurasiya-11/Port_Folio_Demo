@@ -125,7 +125,11 @@ const PROJECTS_DATA = {
     youtubeEmbedUrl: 'https://www.youtube.com/embed/RWLBTY4md1Q',
     githubLink: 'https://github.com/himanshuk91014-spec/AI-Smart-Metrology-Inspector',
     pdfPresentation: './SIH_26034_Legal_Metrology_Presentation.pdf',
+    pdfPresentationFilename: 'SIH_26034_Legal_Metrology_Presentation.pdf',
+    pdfPresentationLabel: 'SIH Slides (PDF)',
     pdfCertificate: './Govt2047_SIH_Certificate_of_Appreciation.pdf',
+    galleryTitle: 'Authentic Hackathon Photos & Presentation',
+    galleryBadge: 'SIH 2026 EVIDENCE',
     metaBadges: [
       { icon: '🏆', label: 'Smart India Hackathon 2026 (Internal Qualified)' },
       { icon: '👥', label: 'Team Govt2047 (Team ID: 151159)' },
@@ -191,22 +195,115 @@ const PROJECTS_DATA = {
     impact: 'Selected at internal hackathon round for Smart India Hackathon 2026. Proved real-time, sub-second automated compliance verification on packaged commodities, replacing slow manual sampling with verifiable digital records.'
   },
   gesture: {
-    title: 'Hand Gesture Recognition Virtual Mouse',
+    title: 'Gesture-Based Virtual Mouse (Hand Gesture Recognition System)',
     category: 'Computer Vision | Human-Computer Interaction (HCI)',
-    client: 'Autonomous Engineering Project',
-    image: './images/project-gesture.jpg',
-    tags: ['Python', 'OpenCV', 'MediaPipe', 'Real-time HCI', 'Signal Smoothing', 'PyAutoGUI'],
-    overview: 'Developed a real-time computer vision application enabling touchless human-computer interaction using hand gestures for cursor movement and click operations.',
-    problem: 'Physical computer mice are unsuited for sterile environments (medical/operating rooms, industrial cleanrooms) and pose accessibility barriers for users with physical contact constraints.',
-    solution: 'Leveraged OpenCV and MediaPipe to detect and track 21 3D hand landmarks in real-time from webcam video feeds, translating finger coordinate gestures into system cursor movement and clicks.',
-    keyFeatures: [
-      'Real-time hand tracking utilizing 21 3D knuckle landmarks at high FPS',
-      'Pinch-to-click gesture recognition with high precision and low latency',
-      'Jitter-reduction moving average algorithm for stable cursor glide',
-      'Touchless operation requiring zero specialized hardware—runs on standard webcams'
+    client: 'GNIOT Dept of CSE • RMR Team Academic Innovation Project',
+    image: './images/gesture-defense-rahul-speaker.jpg',
+    tags: ['Python', 'OpenCV', 'MediaPipe', 'NumPy', 'Pandas', 'Real-time HCI', 'Signal Smoothing', 'PyAutoGUI', 'VS Code'],
+    githubLink: 'https://github.com/Rahulchaurasiya-11/Hand-Gesture-Detection-Using-CV',
+    pdfPresentation: './Gesture_Based_Virtual_Mouse_Presentation.pdf',
+    pdfPresentationFilename: 'Gesture_Based_Virtual_Mouse_Presentation.pdf',
+    pdfPresentationLabel: 'Project PPT (PDF)',
+    metaBadges: [
+      { icon: '🏛️', label: 'Greater Noida Institute of Technology (GNIOT) • NAAC A Grade' },
+      { icon: '👥', label: 'RMR Team: Rahul Chaurasiya (Lead CV Dev), Ritanshu Dubey, Manav Verma' },
+      { icon: '👩‍🏫', label: 'Under the Guidance of: Ms. Babita Ma\'am (Dept. of CSE)' },
+      { icon: '👨‍🏫', label: 'Approved by: Dr. Vijay Shukla Sir (HOD CSE - AI)' },
+      { icon: '🖐️', label: '21 3D Hand Landmarks via MediaPipe & OpenCV' },
+      { icon: '⚡', label: 'NumPy Vector Math & Moving Average Jitter Smoothing' }
     ],
-    backendArchitecture: 'Multi-threaded video pipeline: Video Frame Ingestion -> MediaPipe Landmark Detector -> Gesture Coordinate Classifier -> OS Mouse Event Dispatcher.',
-    impact: 'Demonstrated successful contact-free desktop navigation, showing practical mastery of OpenCV, Python, and computer vision workflows.'
+    academicDefense: {
+      summary: 'Successfully presented and defended the project at the Department of Computer Science & Engineering, Greater Noida Institute of Technology (GNIOT). The faculty panel critically reviewed real-time landmark tracking latency, pinch-detection accuracy, jitter stability, and practical touchless computing potential.',
+      points: [
+        { label: 'Project Guide', value: 'Ms. Babita Ma\'am (Dept. of CSE, GNIOT)' },
+        { label: 'HOD Approval', value: 'Dr. Vijay Shukla Sir (HOD, CSE - AI)' },
+        { label: 'Team', value: 'RMR Team (Rahul Chaurasiya, Ritanshu Dubey, Manav Verma)' },
+        { label: 'Evaluation Rating', value: 'High Commendation for Real-Time Precision & Zero-Jitter Gliding' }
+      ]
+    },
+    overview: 'Engineered an AI-powered touchless desktop interface utilizing Computer Vision and 21 3D Hand Landmarks. Replaces physical hardware mice with intuitive airborne hand gestures, enabling touchless computing for sterile medical environments, industrial cleanrooms, and accessible computing for users with physical constraints.',
+    problem: 'Traditional mechanical and optical mice require physical contact, making them unsuitable for sterile operating rooms, healthcare clinics, and contaminated industrial areas. Moreover, physical mouse hardware presents accessibility barriers for motor-impaired users and suffers from wear-and-tear degradation in public kiosks.',
+    solution: 'Engineered an end-to-end multi-threaded Python application leveraging OpenCV for live webcam frame acquisition and MediaPipe Hands for tracking 21 3D hand landmarks in real time. Implemented NumPy for vectorized Euclidean coordinate calculations between thumb (#4) and index finger (#8) to actuate clicks, and Pandas for benchmarking frame latency. Applied a moving-average exponential smoothing filter to eliminate physiological hand jitter for precise, pixel-accurate cursor manipulation.',
+    keyFeatures: [
+      'MediaPipe Hands 21 3D Landmark Localization: Sub-pixel knuckle tracking running at 30+ FPS on commodity webcams without dedicated depth or IR sensors',
+      'NumPy Vectorized Euclidean Distance Math: Instantaneous calculation of euclidean distance ||P_index - P_thumb|| for high-speed, zero-lag pinch-to-click actuation',
+      'OpenCV Computer Vision Pipeline: Real-time BGR-to-RGB conversion, horizontal mirroring for natural hand coordination, and interactive on-screen HUD graphics',
+      'Moving-Average Jitter Suppression: Proprietary smoothing algorithm that filters micro hand tremors, delivering smooth, drift-free cursor translation',
+      'Pandas Performance & Latency Telemetry: Performance logging framework recording frame time, gesture recognition confidence scores, and coordinate dispersion',
+      'PyAutoGUI Event Dispatch: Directly converts detected finger configurations into OS-level mouse events: cursor movement, left click, right click, drag, and scrolling',
+      'Accessibility & Sterile Utility: Ideal for sterile operating rooms, healthcare clinics, interactive kiosks, gaming, and assistive computing for motor disabilities'
+    ],
+    backendArchitecture: 'Multi-threaded Processing Architecture: Webcam Video Capture (OpenCV) -> RGB Color Space Normalization -> MediaPipe Hands 21-Landmark Model Inference -> NumPy Coordinate Vectorization & Euclidean Distance Measurement -> Moving-Average Jitter Reduction Filter -> PyAutoGUI OS Event Dispatcher -> Smooth Cursor Navigation & Click Events -> Pandas Telemetry Logging.',
+    impact: 'Proved robust touchless device navigation on consumer laptops with under 25ms end-to-end response latency, receiving faculty praise at GNIOT and establishing a solid foundation for future IoT and AR/VR spatial computing interfaces.',
+    galleryTitle: 'Project Defense Session & 11-Slide PPT Walkthrough',
+    galleryBadge: 'GNIOT DEFENSE EVIDENCE',
+    gallery: [
+      {
+        src: './images/gesture-defense-rahul-speaker.jpg',
+        title: 'Project Defense at GNIOT — Rahul Chaurasiya Presenting',
+        caption: 'Rahul Chaurasiya delivering the technical walkthrough of Hand Gesture Recognition System before faculty panel at Greater Noida Institute of Technology.'
+      },
+      {
+        src: './images/gesture-defense-faculty-presentation.jpg',
+        title: 'Faculty Evaluation & Review Session',
+        caption: 'Project presentation session in the presence of Project Guide Ms. Babita Ma\'am and HOD CSE (AI) Dr. Vijay Shukla Sir reviewing project documentation.'
+      },
+      {
+        src: './images/gesture-slide-1.jpg',
+        title: 'Title Slide — Greater Noida Institute of Technology (NAAC A)',
+        caption: '1. Department of Computer Science & Engineering, GNIOT (Accredited NAAC A Grade)'
+      },
+      {
+        src: './images/gesture-slide-2.jpg',
+        title: 'Team & Mentorship Details (Slide 2)',
+        caption: '2. Team: Rahul Chaurasiya, Ritanshu Dubey, Manav Verma | Guide: Ms. Babita Ma\'am | HOD: Dr. Vijay Shukla Sir'
+      },
+      {
+        src: './images/gesture-slide-3.jpg',
+        title: 'Introduction: Hand Gesture Recognition (Slide 3)',
+        caption: '3. Hand Detection & Gesture Recognition using Computer Vision and 21 3D Landmarks'
+      },
+      {
+        src: './images/gesture-slide-4.jpg',
+        title: 'Why It Is Needed: Vision & Mission (Slide 4)',
+        caption: '4. Hands-free device control, healthcare safety, disabled accessibility, and touchless future'
+      },
+      {
+        src: './images/gesture-slide-5.jpg',
+        title: 'Tools & Technologies Used (Slide 5)',
+        caption: '5. Technology Stack: Python, OpenCV, MediaPipe, NumPy, Pandas, VS Code'
+      },
+      {
+        src: './images/gesture-slide-6.jpg',
+        title: 'Applications & Field Distribution (Slide 6)',
+        caption: '6. Field distribution: Consumer Electronics 45%, Automotive 15%, Gaming/AR/VR 15%, Industrial 15%, Healthcare 10%'
+      },
+      {
+        src: './images/gesture-slide-7.jpg',
+        title: 'Technical Challenges & Solutions (Slide 7)',
+        caption: '7. Overcoming environmental lighting, dynamic gesture tracking, and real-time processing constraints'
+      },
+      {
+        src: './images/gesture-slide-8.jpg',
+        title: 'Future Scope & Road Ahead (Slide 8)',
+        caption: '8. Smart IoT environments, AR/VR integration, assistive tech, and touchless smart cities'
+      },
+      {
+        src: './images/gesture-slide-9.jpg',
+        title: 'Real-Life Implementation Scenarios (Slide 9)',
+        caption: '9. Automotive touchless control, smart kiosks, and contact-free user interactions'
+      },
+      {
+        src: './images/gesture-slide-10.jpg',
+        title: 'Conclusion & Key Takeaways (Slide 10)',
+        caption: '10. Gestures as future of seamless HCI, synthetic training data, and contact information'
+      },
+      {
+        src: './images/gesture-slide-11.jpg',
+        title: 'Concluding Acknowledgements (Slide 11)',
+        caption: '11. Thank you note from RMR Team (Rahul Chaurasiya, Ritanshu Dubey, Manav Verma)'
+      }
+    ]
   }
 };
 
@@ -390,8 +487,8 @@ function setupProjectModals() {
                 </a>
               ` : ''}
               ${data.pdfPresentation ? `
-                <a href="${data.pdfPresentation}" target="_blank" rel="noopener noreferrer" download="SIH_26034_Legal_Metrology_Presentation.pdf" class="btn btn-glass btn-sm" style="display:inline-flex; align-items:center; gap:6px;">
-                  <span>📄 Slides (PDF)</span>
+                <a href="${data.pdfPresentation}" target="_blank" rel="noopener noreferrer" download="${data.pdfPresentationFilename || 'Presentation_Slides.pdf'}" class="btn btn-glass btn-sm" style="display:inline-flex; align-items:center; gap:6px;">
+                  <span>📄 ${data.pdfPresentationLabel || 'Slides (PDF)'}</span>
                 </a>
               ` : ''}
               ${data.pdfCertificate ? `
@@ -513,14 +610,14 @@ function setupProjectModals() {
           </div>
         ` : ''}
 
-        <!-- Gallery for SIH (metrology) -->
+        <!-- Gallery for SIH (metrology) / Gesture Defense -->
         ${data.gallery && data.gallery.length > 0 ? `
           <div style="margin-bottom:24px;">
             <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:12px; flex-wrap:wrap; gap:8px;">
               <h4 style="font-size:1.05rem; font-weight:700; color:#ffffff; display:flex; align-items:center; gap:8px;">
-                <span>📸 Authentic Hackathon Photos & Presentation</span>
+                <span>📸 ${data.galleryTitle || 'Authentic Photos & Presentation Slides'}</span>
               </h4>
-              <span style="font-size:0.72rem; background:#059669; color:#ffffff; padding:3px 8px; border-radius:4px; font-weight:600; font-family:var(--font-mono);">SIH 2026 EVIDENCE</span>
+              <span style="font-size:0.72rem; background:#059669; color:#ffffff; padding:3px 8px; border-radius:4px; font-weight:600; font-family:var(--font-mono);">${data.galleryBadge || 'VERIFIED EVIDENCE'}</span>
             </div>
             <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:14px;">
               ${data.gallery.map(item => `
@@ -531,6 +628,26 @@ function setupProjectModals() {
                   <div style="padding:10px 12px; font-size:0.78rem; color:#94a3b8; font-family:var(--font-mono); border-top:1px solid #1e293b;">
                     ${item.caption}
                   </div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        ` : ''}
+
+        <!-- Academic Defense & Faculty Review Block -->
+        ${data.academicDefense ? `
+          <div style="margin-bottom:28px; padding:18px 20px; background:#0D1117; border:1px solid #30363D; border-left:4px solid #a371f7; border-radius:8px;">
+            <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:8px; flex-wrap:wrap; gap:8px;">
+              <h4 style="font-size:1.05rem; font-weight:700; color:#F0F6FC; margin:0; display:flex; align-items:center; gap:8px;">
+                <span>🎓 Institutional Defense & Faculty Review</span>
+              </h4>
+              <span style="font-size:0.72rem; background:#8957e5; color:#ffffff; padding:3px 8px; border-radius:4px; font-weight:600; font-family:var(--font-mono);">GNIOT CSE FACULTY REVIEW</span>
+            </div>
+            <p style="font-size:0.9rem; color:#8B949E; line-height:1.65; margin:0 0 12px 0;">${data.academicDefense.summary}</p>
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:10px;">
+              ${data.academicDefense.points.map(p => `
+                <div style="padding:10px 14px; background:#161B22; border:1px solid #30363D; border-radius:6px; font-size:0.84rem; color:#C9D1D9;">
+                  <strong style="color:#a371f7;">${p.label}:</strong> ${p.value}
                 </div>
               `).join('')}
             </div>
