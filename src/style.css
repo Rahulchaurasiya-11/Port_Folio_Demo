@@ -910,41 +910,6 @@ body.light-theme .status-indicator-pill {
   border-color: #cbd5e1;
 }
 
-.photo-quick-edit-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  padding: 4px 10px;
-  background: #1e293b;
-  border: 1px solid #334155;
-  border-radius: var(--radius-sm);
-  font-size: 0.72rem;
-  color: var(--text-secondary);
-  cursor: pointer;
-  transition: all var(--transition-fast);
-}
-
-.photo-quick-edit-btn:hover {
-  color: #f8fafc;
-  background: #334155;
-  border-color: #475569;
-}
-
-body.light-theme .photo-quick-edit-btn {
-  background: #f1f5f9;
-  border-color: #cbd5e1;
-  color: #475569;
-}
-
-body.light-theme .photo-quick-edit-btn:hover {
-  background: #e2e8f0;
-  color: #0f172a;
-}
-
-.photo-quick-edit-btn svg {
-  width: 13px;
-  height: 13px;
-}
 
 .profile-photo-container {
   position: relative;

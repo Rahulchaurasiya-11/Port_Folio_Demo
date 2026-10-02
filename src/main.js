@@ -83,10 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // 5. Setup Project Modals
   setupProjectModals();
 
-  // 6. Setup Headshot Photo Upload / Swap
-  setupHeadshotUpload();
-
-  // 7. Setup Contact Form & Clipboard
+  // 6. Setup Contact Form & Clipboard
   setupContactForm();
   setupClipboardButtons();
 
@@ -282,39 +279,6 @@ function setupProjectModals() {
 }
 
 
-/* ===================================================================
-   8. HEADSHOT PHOTO UPLOAD & PERSISTENCE
-   =================================================================== */
-function setupHeadshotUpload() {
-  const imgElement = document.getElementById('user-profile-img');
-  const uploadInput = document.getElementById('headshot-upload-input');
-
-  // Load saved custom photo from localStorage if present
-  const savedPhoto = localStorage.getItem('custom_headshot_data');
-  if (savedPhoto && imgElement) {
-    imgElement.src = savedPhoto;
-  }
-
-  uploadInput?.addEventListener('change', (e) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
-
-    const reader = new FileReader();
-    reader.onload = (event) => {
-      const dataUrl = event.target?.result;
-      if (typeof dataUrl === 'string' && imgElement) {
-        imgElement.src = dataUrl;
-        try {
-          localStorage.setItem('custom_headshot_data', dataUrl);
-        } catch {
-          // LocalStorage quota fallback
-        }
-        showToast('Custom Headshot Photo Updated Successfully! 📸');
-      }
-    };
-    reader.readAsDataURL(file);
-  });
-}
 
 /* ===================================================================
    9. INTERACTIVE CONTACT FORM & CELEBRATION
