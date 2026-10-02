@@ -65,13 +65,10 @@ npm run build
 - **Live URL:** [https://rahulchaurasiya-11.github.io/Port_Folio_Demo/](https://rahulchaurasiya-11.github.io/Port_Folio_Demo/)
 - Automatically builds and deploys from `main` branch via `.github/workflows/deploy.yml`.
 
-### 2. Vercel (1-Click Instant Deploy)
-- **1-Click Import & Deploy:** [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FRahulchaurasiya-11%2FPort_Folio_Demo)
-- Or import directly in Vercel dashboard:
-  1. Open [vercel.com/new](https://vercel.com/new)
-  2. Select `Port_Folio_Demo` from your GitHub repositories
-  3. Framework Preset: **Vite** (detected automatically)
-  4. Click **Deploy**! Live URL will be generated as `https://port-folio-demo-*.vercel.app`
+### 2. Vercel (Production Live Deployment)
+- **Live URL:** [https://rahul-chaurasiya.vercel.app/](https://rahul-chaurasiya.vercel.app/)
+- **Vercel Dashboard:** [https://vercel.com/govt2047/rahul-chaurasiya](https://vercel.com/govt2047/rahul-chaurasiya)
+- Configured with instant-revalidate cache headers in `vercel.json` so all updates pushed to `main` reflect immediately.
 
 ---
 
