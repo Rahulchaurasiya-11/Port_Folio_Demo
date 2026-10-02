@@ -116,36 +116,78 @@ const PROJECTS_DATA = {
     impact: 'Successfully completed 2-month summer internship with a 10/10 rating and "EXCELLENT" guide remark from Mukul Shrivastava. Replaced manual paperwork with real-time operational traceability and automated compliance audits.'
   },
   metrology: {
-    title: 'Legal Metrology AI Compliance System (SIH 2026 — PS #SIH26034)',
-    category: 'Regulatory AI & Computer Vision | Smart India Hackathon 2026',
-    client: 'SIH 2026 • Team Govt2047 (Internal Level Selected)',
+    title: '2. Legal Metrology AI Compliance System (SIH 2026 — PS #SIH26034)',
+    category: 'Regulatory AI, Computer Vision & Statutory Compliance | Smart India Hackathon 2026',
+    client: 'SIH 2026 • Team Govt2047 (Team ID: 151159) • Internal Level Qualified',
     image: './images/sih-team-govt2047.jpg',
-    liveLink: '',
+    liveLink: 'https://ai-smart-metrology-inspector.vercel.app/',
+    youtubeLink: 'https://youtu.be/RWLBTY4md1Q?si=EeDuKoAW5nrNSd_T',
+    youtubeEmbedUrl: 'https://www.youtube.com/embed/RWLBTY4md1Q',
+    githubLink: 'https://github.com/himanshuk91014-spec/AI-Smart-Metrology-Inspector',
+    pdfPresentation: './SIH_26034_Legal_Metrology_Presentation.pdf',
+    pdfCertificate: './Govt2047_SIH_Certificate_of_Appreciation.pdf',
+    metaBadges: [
+      { icon: '🏆', label: 'Smart India Hackathon 2026 (Internal Qualified)' },
+      { icon: '👥', label: 'Team Govt2047 (Team ID: 151159)' },
+      { icon: '📋', label: 'Problem Statement ID: SIH26034' },
+      { icon: '⚖️', label: 'Legal Metrology (Packaged Commodities) Rules, 2011' },
+      { icon: '📜', label: 'Certificate No: GNIOT/CSE/TechClub/SIH/2128' }
+    ],
     gallery: [
+      {
+        src: './images/sih-rahul-certificate.jpg',
+        title: 'Official Certificate of Appreciation (Rahul Chaurasiya)',
+        caption: '📜 Certificate No: GNIOT/CSE/TechClub/SIH/2128 | Team Govt2047 Qualified'
+      },
       {
         src: './images/sih-team-govt2047.jpg',
         title: 'Team Govt2047 Hackathon Cohort',
-        caption: '👥 Team Govt2047 at Hackathon — Internal Selection Round'
+        caption: '👥 Team Govt2047 at GNIOT Internal Hackathon Selection Round'
       },
       {
         src: './images/sih-presentation-screen.jpg',
-        title: 'SIH 2026 Problem Statement #SIH26034 & Presentation',
+        title: 'SIH 2026 Presentation Screen',
         caption: '📋 Official SIH26034 Presentation Screen & Team Slip #24 (Govt2047)'
+      },
+      {
+        src: './images/sih-slide-1.jpg',
+        title: 'SIH Title Slide (PS #SIH26034)',
+        caption: '1. Problem Statement ID: SIH26034 | Team ID: 151159 (Govt2047)'
+      },
+      {
+        src: './images/sih-slide-2.jpg',
+        title: 'Problem Overview & System Checks',
+        caption: '2. Six Core Verifications: Manufacturer ID, Generic Name, Net Qty, MRP, Dates, Helpline'
+      },
+      {
+        src: './images/sih-slide-3.jpg',
+        title: 'Technical Approach & Rule Engine Workflow',
+        caption: '3. UI ➔ FastAPI ➔ OpenCV & PaddleOCR ➔ Smart NLP ➔ Rule Engine ➔ Pass/Fail Decision'
+      },
+      {
+        src: './images/sih-slide-4.jpg',
+        title: 'Full Architecture Layout',
+        caption: '4. Multi-Angle Camera Ingest ➔ RapidOCR/PaddleOCR ONNX ➔ Statutory Rules ➔ Form 1 PDF Notice'
+      },
+      {
+        src: './images/sih-slide-6.jpg',
+        title: 'Working Prototype & Compliance Audit UI',
+        caption: '5. Multi-Angle Package Ingestion (1-4 Angles) & Automated Audit Pipeline'
       }
     ],
-    tags: ['PaddleOCR', 'OCR Technology', 'Python', 'OpenCV', 'Computer Vision', 'Legal Metrology Rules 2011', 'REST APIs'],
-    overview: 'Engineered an automated AI scanning and inspection software system under Problem Statement ID SIH26034 for Smart India Hackathon 2026. The platform utilizes PaddleOCR and Computer Vision algorithms to scan packaged consumer commodities and verify mandatory statutory declarations (MRP, Net Quantity, Mfg/Expiry Dates, and Manufacturer Information) under Legal Metrology (Packaged Commodities) Rules, 2011. Selected at the college internal hackathon level with Team Govt2047.',
+    tags: ['PaddleOCR', 'RapidOCR', 'Python', 'FastAPI', 'OpenCV', 'Computer Vision', 'PCR Rules 2011', 'React UI', 'REST APIs'],
+    overview: 'Engineered an automated AI scanning and inspection software system under Problem Statement ID SIH26034 for Smart India Hackathon 2026. The platform utilizes PaddleOCR/RapidOCR and Computer Vision algorithms to scan packaged consumer commodities across multi-angles (1 to 4 angles) and verify mandatory statutory declarations (MRP, Net Quantity, Mfg/Expiry Dates, Manufacturer Information, Country of Origin, Consumer Care) under Legal Metrology (Packaged Commodities) Rules, 2011. Officially qualified at the college internal hackathon level with Team Govt2047 (Team ID: 151159, Certificate No: GNIOT/CSE/TechClub/SIH/2128).',
     problem: 'Commercial retail packages and e-commerce inventories regularly violate statutory Legal Metrology rules (hidden or tampered MRP, missing manufacturing/expiry dates, inaccurate net weight, missing consumer care contact). Manual audits are labor-intensive, error-prone, and cannot scale across thousands of SKUs.',
-    solution: 'Designed an automated optical inspection pipeline utilizing PaddleOCR text detection and recognition combined with OpenCV image preprocessing. Extracted attributes are verified against codified Legal Metrology (Packaged Commodities) Rules, 2011 by a structured validation engine, flagging missing or non-compliant labels instantly.',
+    solution: 'Designed an automated optical inspection pipeline utilizing PaddleOCR text detection and recognition combined with OpenCV image preprocessing. Extracted attributes are verified against codified Legal Metrology (Packaged Commodities) Rules, 2011 by a structured validation engine, flagging missing or non-compliant labels instantly and generating printable Form 1 Seizure Notices under Section 36(1).',
     keyFeatures: [
-      'PaddleOCR High-Accuracy Detection: Robust text recognition across curved, reflective, distorted, and colored packaging labels',
-      'Smart India Hackathon Problem Statement SIH26034: Full compliance checking for Legal Metrology Packaged Commodities Rules 2011',
-      'Team Govt2047 (Internal Level Selected): Successfully qualified during college internal hackathon selection round',
-      'Computer Vision Preprocessing: OpenCV adaptive thresholding, bilateral filtering, and contour localization for label cropping',
+      'Multi-Angle Package Ingestion: Ingests 1 to 4 angles (Front, Back, Side, Barcode) for comprehensive 360° statutory audit',
+      'PaddleOCR & RapidOCR High-Accuracy Detection: Robust text recognition across curved, reflective, distorted, and colored packaging labels',
+      'Deterministic PCR 2011 Rule Engine: Verifies Rule 6(1) mandatory tags, Rule 11/12 metric units, and font-to-area ratio',
       'Automated Statutory Field Verification: Instant checking of MRP, Net Quantity, Batch, Mfg/Exp Date, and Manufacturer Details',
-      'REST APIs & Alert Services: Python/FastAPI endpoints generating structured audit logs for enforcement authorities'
+      'Section 36(1) Penalty Citation & Notice: Instantly marks packet PASS/FAIL and generates ready-to-print legal inspection notices',
+      'Full Stack Cloud & Edge Fallback: FastAPI Python backend with local client-side fallback via Tesseract.js'
     ],
-    backendArchitecture: 'End-to-End Processing Architecture: Camera Capture / Image Ingest -> OpenCV Preprocessing -> PaddleOCR Inference -> Structured Rule Matching Engine (Legal Metrology Rules 2011) -> FastAPI REST Endpoints -> Compliance Audit Database.',
+    backendArchitecture: 'End-to-End Processing Architecture: Camera Capture / Image Ingest (Multi-Angle) -> OpenCV Preprocessing & PDP Ratio Calculation -> PaddleOCR / RapidOCR ONNX Inference -> Smart NLP Field Extraction -> Codified PCR 2011 Rule Matching Engine -> Section 36(1) Penalty Classifier -> FastAPI REST Endpoints -> PostgreSQL Audit Database -> Interactive React / Canvas Dashboard & 1-Click Form 1 PDF Notice.',
     impact: 'Selected at internal hackathon round for Smart India Hackathon 2026. Proved real-time, sub-second automated compliance verification on packaged commodities, replacing slow manual sampling with verifiable digital records.'
   },
   gesture: {
@@ -319,6 +361,60 @@ function setupProjectModals() {
                 <span>${b.icon}</span> <span>${b.label}</span>
               </div>
             `).join('')}
+          </div>
+        ` : ''}
+
+        <!-- Quick Action Links Bar (Live Demo, YouTube, GitHub, Slides) -->
+        ${(data.liveLink || data.youtubeLink || data.githubLink || data.pdfPresentation) ? `
+          <div style="margin-bottom:24px; padding:16px 20px; background:#0D1117; border:1px solid #30363D; border-radius:10px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px;">
+            <div style="display:flex; align-items:center; gap:8px;">
+              <span style="font-size:1.15rem;">🔗</span>
+              <span style="font-size:0.88rem; color:#F0F6FC; font-weight:600;">Project Live Deployment & Resources:</span>
+            </div>
+            <div style="display:flex; align-items:center; flex-wrap:wrap; gap:8px;">
+              ${data.liveLink ? `
+                <a href="${data.liveLink}" target="_blank" rel="noopener noreferrer" class="btn btn-glow-blue btn-sm" style="display:inline-flex; align-items:center; gap:6px;">
+                  <span>🚀 Open Live Demo</span>
+                  <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </a>
+              ` : ''}
+              ${data.youtubeLink ? `
+                <a href="${data.youtubeLink}" target="_blank" rel="noopener noreferrer" class="btn btn-outline-cyan btn-sm" style="display:inline-flex; align-items:center; gap:6px;">
+                  <span>🎥 YouTube Video</span>
+                  <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+              ` : ''}
+              ${data.githubLink ? `
+                <a href="${data.githubLink}" target="_blank" rel="noopener noreferrer" class="btn btn-glass btn-sm" style="display:inline-flex; align-items:center; gap:6px;">
+                  <span>🐙 GitHub Repo ↗</span>
+                </a>
+              ` : ''}
+              ${data.pdfPresentation ? `
+                <a href="${data.pdfPresentation}" target="_blank" rel="noopener noreferrer" download="SIH_26034_Legal_Metrology_Presentation.pdf" class="btn btn-glass btn-sm" style="display:inline-flex; align-items:center; gap:6px;">
+                  <span>📄 Slides (PDF)</span>
+                </a>
+              ` : ''}
+              ${data.pdfCertificate ? `
+                <a href="${data.pdfCertificate}" target="_blank" rel="noopener noreferrer" download="Govt2047_SIH_Certificate_of_Appreciation.pdf" class="btn btn-glass btn-sm" style="display:inline-flex; align-items:center; gap:6px;">
+                  <span>📜 Certificate (PDF)</span>
+                </a>
+              ` : ''}
+            </div>
+          </div>
+        ` : ''}
+
+        <!-- Embedded YouTube Video Player (if available) -->
+        ${data.youtubeEmbedUrl ? `
+          <div style="margin-bottom:24px; border:1px solid #30363D; border-radius:10px; overflow:hidden; background:#010409;">
+            <div style="padding:10px 16px; background:#161B22; border-bottom:1px solid #30363D; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px;">
+              <span style="font-weight:600; color:#F0F6FC; font-size:0.88rem; display:flex; align-items:center; gap:8px;">
+                <span style="color:#FF0000; font-size:1.1rem;">▶️</span> Official YouTube System Demo Walkthrough
+              </span>
+              <a href="${data.youtubeLink}" target="_blank" rel="noopener noreferrer" style="font-size:0.78rem; color:#58A6FF; text-decoration:none;">Open in YouTube ↗</a>
+            </div>
+            <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden;">
+              <iframe src="${data.youtubeEmbedUrl}" title="YouTube video player" style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
           </div>
         ` : ''}
 
