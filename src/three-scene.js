@@ -42,66 +42,41 @@ export function initThreeScene() {
     mouse.targetY = -(e.clientY / window.innerHeight - 0.5) * 2;
   });
 
-  // 1. Refined, Professional 3D Ambient Particle Constellation (Lightweight & Recruiter-Friendly)
+  // 1. Minimal Technical Coordinate Grid (Clean, Flat, Engineering Standard)
   const isMobile = window.innerWidth < 768;
-  const particleCount = isMobile ? 90 : 220;
+  const particleCount = isMobile ? 60 : 120;
   const geometry = new THREE.BufferGeometry();
   const positions = new Float32Array(particleCount * 3);
-  const colors = new Float32Array(particleCount * 3);
-
-  const colorPalette = [
-    new THREE.Color('#00f2fe'), // Cyan
-    new THREE.Color('#38bdf8'), // Electric Blue
-    new THREE.Color('#818cf8'), // Soft Indigo
-    new THREE.Color('#3b82f6')  // Royal Blue
-  ];
 
   for (let i = 0; i < particleCount; i++) {
-    const radius = 16 + Math.random() * 26;
-    const theta = Math.random() * Math.PI * 2;
-    const phi = Math.acos(Math.random() * 2 - 1);
-
-    positions[i * 3] = radius * Math.sin(phi) * Math.cos(theta);
-    positions[i * 3 + 1] = radius * Math.sin(phi) * Math.sin(theta);
-    positions[i * 3 + 2] = (Math.random() - 0.5) * 25;
-
-    const chosenColor = colorPalette[Math.floor(Math.random() * colorPalette.length)];
-    colors[i * 3] = chosenColor.r;
-    colors[i * 3 + 1] = chosenColor.g;
-    colors[i * 3 + 2] = chosenColor.b;
+    positions[i * 3] = (Math.random() - 0.5) * 60;
+    positions[i * 3 + 1] = (Math.random() - 0.5) * 50;
+    positions[i * 3 + 2] = (Math.random() - 0.5) * 20;
   }
 
   geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-  geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
 
-  // Circular point texture generated programmatically
-  const createCircleTexture = () => {
-    const size = 64;
+  // Crisp square/subtle dot texture (sharp, no glowing radial halo)
+  const createSubtleDot = () => {
+    const size = 16;
     const canvas = document.createElement('canvas');
     canvas.width = size;
     canvas.height = size;
     const ctx = canvas.getContext('2d');
-
-    const grad = ctx.createRadialGradient(size / 2, size / 2, 0, size / 2, size / 2, size / 2);
-    grad.addColorStop(0, 'rgba(255, 255, 255, 1)');
-    grad.addColorStop(0.35, 'rgba(0, 242, 254, 0.7)');
-    grad.addColorStop(0.75, 'rgba(0, 242, 254, 0.15)');
-    grad.addColorStop(1, 'rgba(0, 242, 254, 0)');
-
-    ctx.fillStyle = grad;
-    ctx.fillRect(0, 0, size, size);
-
-    const texture = new THREE.CanvasTexture(canvas);
-    return texture;
+    ctx.fillStyle = '#475569';
+    ctx.beginPath();
+    ctx.arc(size / 2, size / 2, size / 3, 0, Math.PI * 2);
+    ctx.fill();
+    return new THREE.CanvasTexture(canvas);
   };
 
   const particleMaterial = new THREE.PointsMaterial({
-    size: isMobile ? 0.5 : 0.65,
-    vertexColors: true,
+    size: isMobile ? 0.35 : 0.45,
+    color: new THREE.Color('#334155'),
     transparent: true,
-    opacity: 0.5,
-    map: createCircleTexture(),
-    blending: THREE.AdditiveBlending,
+    opacity: 0.35,
+    map: createSubtleDot(),
+    blending: THREE.NormalBlending,
     depthWrite: false
   });
 
@@ -116,7 +91,7 @@ export function initThreeScene() {
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
   });
 
-  // Animation Loop using high-precision performance.now()
+  // Animation Loop - gentle subtle float
   let startTime = performance.now();
 
   function animate() {
@@ -124,16 +99,15 @@ export function initThreeScene() {
     const elapsedTime = (performance.now() - startTime) * 0.001;
 
     // Smooth subtle mouse parallax
-    mouse.x += (mouse.targetX - mouse.x) * 0.04;
-    mouse.y += (mouse.targetY - mouse.y) * 0.04;
+    mouse.x += (mouse.targetX - mouse.x) * 0.03;
+    mouse.y += (mouse.targetY - mouse.y) * 0.03;
 
-    // Ambient gentle drift
-    particleSystem.rotation.y = elapsedTime * 0.02 + mouse.x * 0.08;
-    particleSystem.rotation.x = elapsedTime * 0.01 + mouse.y * 0.08;
+    // Very subtle drift
+    particleSystem.rotation.y = elapsedTime * 0.005 + mouse.x * 0.03;
+    particleSystem.rotation.x = elapsedTime * 0.003 + mouse.y * 0.03;
 
-    // Subtle camera parallax
-    camera.position.x = mouse.x * 1.5;
-    camera.position.y = mouse.y * 1.5;
+    camera.position.x = mouse.x * 0.8;
+    camera.position.y = mouse.y * 0.8;
     camera.lookAt(scene.position);
 
     renderer.render(scene, camera);
