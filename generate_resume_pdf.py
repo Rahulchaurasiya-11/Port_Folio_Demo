@@ -124,15 +124,15 @@ def generate_resume(output_path):
     contact_line1 = (
         '<a href="mailto:rahulteam320@gmail.com"><u>rahulteam320@gmail.com</u></a> | '
         '+91 7007936109 | '
-        'GitHub: <a href="https://github.com/Rahulchaurasiya-11"><u>github.com/Rahulchaurasiya-11</u></a> | '
-        'GFG: <a href="https://www.geeksforgeeks.org/user/rahulchaurasiya11/"><u>rahulchaurasiya11</u></a> | '
+        'GitHub: <a href="https://github.com/Rahulchaurasiya"><u>github.com/Rahulchaurasiya</u></a> | '
+        'GFG: <a href="https://www.geeksforgeeks.org"><u>rahulchaurasiya</u></a> | '
         'LeetCode'
     )
     story.append(Paragraph(contact_line1, contact_style))
     
     contact_line2 = (
-        'HackerRank: <a href="https://www.hackerrank.com/profile/rahulchaurasiya5"><u>@rahulchaurasiya5</u></a> | '
-        'LinkedIn: <a href="https://linkedin.com/in/rahulchaurasiya-7256b6312/"><u>rahulchaurasiya-7256b6312/</u></a>'
+        'HackerRank: <a href="https://www.hackerrank.com/profile/rahulchaurasiya"><u>@rahulchaurasiya</u></a> | '
+        'LinkedIn: <a href="https://linkedin.com/in/rahulchaurasiya/"><u>rahulchaurasiya-7256b6312/</u></a>'
     )
     story.append(Paragraph(contact_line2, contact_style))
     story.append(Spacer(1, 3))
