@@ -453,49 +453,87 @@ function setupThemeToggle() {
 }
 
 /* ===================================================================
-   12. MOBILE NAVIGATION DRAWER
+   12. MOBILE NAVIGATION DRAWER & BACKDROP OVERLAY
    =================================================================== */
 function setupMobileDrawer() {
   const mobileBtn = document.getElementById('mobile-menu-btn');
   const drawer = document.getElementById('mobile-nav-drawer');
-  const mobileLinks = document.querySelectorAll('.mobile-link');
+  const overlay = document.getElementById('mobile-drawer-overlay');
+  const closeBtn = document.getElementById('close-drawer-btn');
+  const mobileTabBtns = document.querySelectorAll('.mobile-tab-btn, #mobile-resume-btn');
+
+  function openDrawer() {
+    drawer?.classList.add('open');
+    overlay?.classList.add('active');
+    mobileBtn?.classList.add('active');
+    mobileBtn?.setAttribute('aria-expanded', 'true');
+    drawer?.setAttribute('aria-hidden', 'false');
+    overlay?.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeDrawer() {
+    drawer?.classList.remove('open');
+    overlay?.classList.remove('active');
+    mobileBtn?.classList.remove('active');
+    mobileBtn?.setAttribute('aria-expanded', 'false');
+    drawer?.setAttribute('aria-hidden', 'true');
+    overlay?.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
 
   mobileBtn?.addEventListener('click', () => {
-    const isOpen = drawer?.classList.toggle('open');
-    mobileBtn.setAttribute('aria-expanded', String(isOpen));
-    soundFX.playClick();
+    if (drawer?.classList.contains('open')) {
+      closeDrawer();
+    } else {
+      openDrawer();
+    }
   });
 
-  mobileLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      drawer?.classList.remove('open');
-      mobileBtn?.setAttribute('aria-expanded', 'false');
+  closeBtn?.addEventListener('click', closeDrawer);
+  overlay?.addEventListener('click', closeDrawer);
+
+  mobileTabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      closeDrawer();
     });
+  });
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && drawer?.classList.contains('open')) {
+      closeDrawer();
+    }
   });
 }
 
 /* ===================================================================
-   13. SCROLL SPY & NAVBAR BLUR ON SCROLL
+   13. SCROLL SPY & NAVBAR BLUR ON SCROLL (Desktop & Mobile Bottom Bar)
    =================================================================== */
 function setupScrollSpy() {
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-link');
+  const mobileTabBtns = document.querySelectorAll('.mobile-tab-btn');
+  const bottomTabs = document.querySelectorAll('.mobile-bottom-tab');
 
   window.addEventListener('scroll', () => {
     const scrollY = window.pageYOffset;
 
     sections.forEach(section => {
       const sectionHeight = section.offsetHeight;
-      const sectionTop = section.offsetTop - 120;
+      const sectionTop = section.offsetTop - 140;
       const sectionId = section.getAttribute('id');
 
-      if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+      if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
         navLinks.forEach(link => {
-          if (link.dataset.nav === sectionId) {
-            link.classList.add('active');
-          } else {
-            link.classList.remove('active');
-          }
+          link.classList.toggle('active', link.dataset.nav === sectionId);
+        });
+
+        mobileTabBtns.forEach(tab => {
+          tab.classList.toggle('active', tab.dataset.nav === sectionId);
+        });
+
+        bottomTabs.forEach(tab => {
+          tab.classList.toggle('active', tab.dataset.bottomNav === sectionId);
         });
       }
     });

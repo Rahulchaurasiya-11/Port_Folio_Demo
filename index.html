@@ -97,25 +97,101 @@
             <span class="bar"></span>
             <span class="bar"></span>
           </button>
-        </div>
-      </div>
-
-      <!-- Mobile Dropdown Navigation -->
-      <div id="mobile-nav-drawer" class="mobile-nav-drawer">
-        <ul class="mobile-links">
-          <li><a href="#about" class="mobile-link">About Me</a></li>
-          <li><a href="#skills" class="mobile-link">Tech Stack</a></li>
-          <li><a href="#experience" class="mobile-link">Experience</a></li>
-          <li><a href="#projects" class="mobile-link">Key Projects</a></li>
-          <li><a href="#achievements" class="mobile-link">Achievements & IP</a></li>
-          <li><a href="#coding-profiles" class="mobile-link">Coding Profiles</a></li>
-          <li><a href="#contact" class="mobile-link">Get In Touch</a></li>
-        </ul>
-        <div class="mobile-actions">
-          <a id="mobile-resume-btn" href="/Rahul_Chaurasiya_Resume.pdf" target="_blank" rel="noopener noreferrer" download="Rahul_Chaurasiya_Resume.pdf" class="btn btn-outline-cyan w-full">Download Resume (PDF)</a>
-        </div>
       </div>
     </header>
+
+    <!-- Mobile Navigation Drawer & Backdrop Overlay -->
+    <div id="mobile-drawer-overlay" class="mobile-drawer-overlay" aria-hidden="true"></div>
+    <aside id="mobile-nav-drawer" class="mobile-nav-drawer" aria-label="Mobile Navigation Sidebar" aria-hidden="true">
+      <div class="mobile-drawer-header">
+        <div class="drawer-brand">
+          <div class="logo-mark">
+            <span class="logo-text-code">&lt;</span>
+            <span class="logo-name">RC</span>
+            <span class="logo-text-code">/&gt;</span>
+          </div>
+          <div class="drawer-brand-text">
+            <span class="drawer-title">Rahul Chaurasiya</span>
+            <span class="drawer-role">Java Backend & AI</span>
+          </div>
+        </div>
+        <button id="close-drawer-btn" class="drawer-close-btn" aria-label="Close navigation menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <div class="mobile-drawer-body">
+        <div class="drawer-section-label">PORTFOLIO NAVIGATION</div>
+        <nav class="mobile-nav-tabs">
+          <a href="#about" class="mobile-tab-btn" data-nav="about">
+            <span class="tab-btn-content">
+              <span class="tab-icon">👤</span>
+              <span class="tab-label">About Me</span>
+            </span>
+            <span class="tab-arrow">→</span>
+          </a>
+          <a href="#skills" class="mobile-tab-btn" data-nav="skills">
+            <span class="tab-btn-content">
+              <span class="tab-icon">⚡</span>
+              <span class="tab-label">Tech Stack</span>
+            </span>
+            <span class="tab-arrow">→</span>
+          </a>
+          <a href="#experience" class="mobile-tab-btn" data-nav="experience">
+            <span class="tab-btn-content">
+              <span class="tab-icon">💼</span>
+              <span class="tab-label">Experience</span>
+            </span>
+            <span class="tab-arrow">→</span>
+          </a>
+          <a href="#projects" class="mobile-tab-btn" data-nav="projects">
+            <span class="tab-btn-content">
+              <span class="tab-icon">🚀</span>
+              <span class="tab-label">Key Projects</span>
+            </span>
+            <span class="tab-arrow">→</span>
+          </a>
+          <a href="#achievements" class="mobile-tab-btn" data-nav="achievements">
+            <span class="tab-btn-content">
+              <span class="tab-icon">📜</span>
+              <span class="tab-label">Achievements & IP</span>
+            </span>
+            <span class="tab-arrow">→</span>
+          </a>
+          <a href="#coding-profiles" class="mobile-tab-btn" data-nav="coding-profiles">
+            <span class="tab-btn-content">
+              <span class="tab-icon">🌐</span>
+              <span class="tab-label">Coding Profiles</span>
+            </span>
+            <span class="tab-arrow">→</span>
+          </a>
+          <a href="#contact" class="mobile-tab-btn" data-nav="contact">
+            <span class="tab-btn-content">
+              <span class="tab-icon">✉️</span>
+              <span class="tab-label">Get In Touch</span>
+            </span>
+            <span class="tab-arrow">→</span>
+          </a>
+        </nav>
+      </div>
+
+      <div class="mobile-drawer-footer">
+        <a id="mobile-resume-btn" href="/Rahul_Chaurasiya_Resume.pdf" target="_blank" rel="noopener noreferrer" download="Rahul_Chaurasiya_Resume.pdf" class="btn btn-glow-blue w-full">
+          <span>Download Resume (PDF)</span>
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+        </a>
+        <a href="mailto:rahulteam320@gmail.com" class="btn btn-outline-cyan w-full">
+          <span>Email Me Directly ✉️</span>
+        </a>
+      </div>
+    </aside>
 
     <main id="main-content">
       <!-- ================= HERO SECTION ================= -->
@@ -1489,8 +1565,44 @@
       </div>
     </div>
 
-    <!-- ================= FLOATING TOAST NOTIFICATION CONTAINER ================= -->
-    <div id="toast-container" class="toast-container" aria-live="polite"></div>
+    <!-- ================= MOBILE BOTTOM QUICK NAVIGATION DOCK ================= -->
+    <nav class="mobile-bottom-bar" aria-label="Quick Mobile Navigation">
+      <a href="#hero" class="mobile-bottom-tab active" data-bottom-nav="hero">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="bottom-tab-icon">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+          <polyline points="9 22 9 12 15 12 15 22"></polyline>
+        </svg>
+        <span class="bottom-tab-label">Home</span>
+      </a>
+      <a href="#skills" class="mobile-bottom-tab" data-bottom-nav="skills">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="bottom-tab-icon">
+          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+        </svg>
+        <span class="bottom-tab-label">Stack</span>
+      </a>
+      <a href="#projects" class="mobile-bottom-tab" data-bottom-nav="projects">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="bottom-tab-icon">
+          <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+          <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+        </svg>
+        <span class="bottom-tab-label">Projects</span>
+      </a>
+      <a href="#experience" class="mobile-bottom-tab" data-bottom-nav="experience">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="bottom-tab-icon">
+          <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+          <line x1="8" y1="21" x2="16" y2="21"></line>
+          <line x1="12" y1="17" x2="12" y2="21"></line>
+        </svg>
+        <span class="bottom-tab-label">Exp</span>
+      </a>
+      <a href="#contact" class="mobile-bottom-tab" data-bottom-nav="contact">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="bottom-tab-icon">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+          <polyline points="22,6 12,13 2,6"></polyline>
+        </svg>
+        <span class="bottom-tab-label">Contact</span>
+      </a>
+    </nav>
 
     <!-- Main Module Script -->
     <script type="module" src="/src/main.js"></script>
