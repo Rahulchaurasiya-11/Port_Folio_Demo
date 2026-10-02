@@ -2,7 +2,7 @@
 
 > **Java Backend Developer & AI Enthusiast**  
 > 📜 **Patent Holder** | 🎓 **B.Tech CSE (3rd Year)** | 🏢 **Hindalco Industries IT Intern** | 🏆 **SIH 2026 Architecture Lead**  
-> 📧 **Email:** [rahulteam320@gmail.com](mailto:rahulteam320@gmail.com)  
+> 📧 **Email:** [RXXXXXXX.COM](mailto:rahulteam320@gmail.com)  
 > 📍 **Location:** Uttar Pradesh, India  
 
 ---
