@@ -18,9 +18,11 @@ Modern, responsive, high-performance personal portfolio website built with Vite,
    - **Tech Stack:** Java, Spring Boot, MySQL, JPA/Hibernate, HTML/CSS
    - Enterprise backend system for industrial scrap tracking, automated inventory classification, and recycling reporting.
 
-2. **Legal Metrology AI Compliance System (Smart India Hackathon 2026)**
-   - **Tech Stack:** Python, AI/ML, REST APIs, System Architecture
-   - Automated regulatory packaging compliance scanner architecture for SIH 2026.
+2. **Legal Metrology AI Compliance System (SIH 2026 — PS #SIH26034)**
+   - **Tech Stack:** Python, PaddleOCR, OCR, OpenCV, Computer Vision, REST APIs
+   - **Status:** Internal Hackathon Selected (Team Govt2047)
+   - Automated packaging compliance scanner using PaddleOCR to verify mandatory declarations (MRP, Net Quantity, Dates) under Legal Metrology Rules, 2011.
+
 
 3. **Hand Gesture Recognition Virtual Mouse**
    - **Tech Stack:** Python, OpenCV, MediaPipe

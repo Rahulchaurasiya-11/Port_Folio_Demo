@@ -26,23 +26,37 @@ const PROJECTS_DATA = {
     impact: 'Streamlined plant floor scrap tracking, automated waste reduction reporting, and established data modeling best practices for industrial recycling workflows.'
   },
   metrology: {
-    title: 'Legal Metrology AI Compliance System (SIH 2026)',
-    category: 'AI System Architecture | Regulatory Technology',
-    client: 'Smart India Hackathon 2026 (SIH)',
-    image: '/images/project-metrology.jpg',
-    tags: ['Python', 'AI / ML', 'REST APIs', 'System Architecture', 'Computer Vision', 'OCR'],
-    overview: 'Designed the software architecture and system proposal for an AI-powered automated scanning system to detect legal metrology compliance violations on packaged consumer goods for Smart India Hackathon 2026.',
-    problem: 'E-commerce and retail packages frequently violate legal metrology rules (e.g., missing or obscured MRP, missing expiry date, inaccurate net quantity, or incorrect manufacturer details), which is difficult to enforce manually at scale.',
-    solution: 'Engineered an end-to-end multi-tier system architecture proposal featuring computer vision preprocessing, OCR extraction, NLP attribute matching, and REST APIs for automated non-compliance alerting.',
-    keyFeatures: [
-      'Architected automated pipeline from image capture to regulatory validation',
-      'AI/ML attribute verification for MRP, net quantity, manufacturing and expiry dates',
-      'Standardized REST APIs connecting compliance scanners with centralized enforcement databases',
-      'Rule-based violation classification according to Legal Metrology Packaged Commodities rules',
-      'Detailed proposal submitted for Smart India Hackathon 2026'
+    title: 'Legal Metrology AI Compliance System (SIH 2026 — PS #SIH26034)',
+    category: 'Regulatory AI & Computer Vision | Smart India Hackathon 2026',
+    client: 'SIH 2026 • Team Govt2047 (Internal Level Selected)',
+    image: '/images/sih-team-govt2047.jpg',
+    liveLink: '', // Ready for user's live deployment link
+    gallery: [
+      {
+        src: '/images/sih-team-govt2047.jpg',
+        title: 'Team Govt2047 Hackathon Cohort',
+        caption: '👥 Team Govt2047 at Hackathon — Internal Selection Round'
+      },
+      {
+        src: '/images/sih-presentation-screen.jpg',
+        title: 'SIH 2026 Problem Statement #SIH26034 & Presentation',
+        caption: '📋 Official SIH26034 Presentation Screen & Team Slip #24 (Govt2047)'
+      }
     ],
-    backendArchitecture: 'Modular microservice architecture separating vision ingestion, AI/ML inference pipelines, and RESTful compliance logging services.',
-    impact: 'Selected for system architecture presentation at SIH 2026, offering scalable automated legal compliance protection for consumers.'
+    tags: ['PaddleOCR', 'OCR Technology', 'Python', 'OpenCV', 'Computer Vision', 'Legal Metrology Rules 2011', 'REST APIs'],
+    overview: 'Engineered an automated AI scanning and inspection software system under Problem Statement ID SIH26034 for Smart India Hackathon 2026. The platform utilizes PaddleOCR and Computer Vision algorithms to scan packaged consumer commodities and verify mandatory statutory declarations (MRP, Net Quantity, Mfg/Expiry Dates, and Manufacturer Information) under Legal Metrology (Packaged Commodities) Rules, 2011. Selected at the college internal hackathon level with Team Govt2047.',
+    problem: 'Commercial retail packages and e-commerce inventories regularly violate statutory Legal Metrology rules (hidden or tampered MRP, missing manufacturing/expiry dates, inaccurate net weight, missing consumer care contact). Manual audits are labor-intensive, error-prone, and cannot scale across thousands of SKUs.',
+    solution: 'Designed an automated optical inspection pipeline utilizing PaddleOCR text detection and recognition combined with OpenCV image preprocessing. Extracted attributes are verified against codified Legal Metrology (Packaged Commodities) Rules, 2011 by a structured validation engine, flagging missing or non-compliant labels instantly.',
+    keyFeatures: [
+      'PaddleOCR High-Accuracy Detection: Robust text recognition across curved, reflective, distorted, and colored packaging labels',
+      'Smart India Hackathon Problem Statement SIH26034: Full compliance checking for Legal Metrology Packaged Commodities Rules 2011',
+      'Team Govt2047 (Internal Level Selected): Successfully qualified during college internal hackathon selection round',
+      'Computer Vision Preprocessing: OpenCV adaptive thresholding, bilateral filtering, and contour localization for label cropping',
+      'Automated Statutory Field Verification: Instant checking of MRP, Net Quantity, Batch, Mfg/Exp Date, and Manufacturer Details',
+      'REST APIs & Alert Services: Python/FastAPI endpoints generating structured audit logs for enforcement authorities'
+    ],
+    backendArchitecture: 'End-to-End Processing Architecture: Camera Capture / Image Ingest -> OpenCV Preprocessing -> PaddleOCR Inference -> Structured Rule Matching Engine (Legal Metrology Rules 2011) -> FastAPI REST Endpoints -> Compliance Audit Database.',
+    impact: 'Selected at internal hackathon round for Smart India Hackathon 2026. Proved real-time, sub-second automated compliance verification on packaged commodities, replacing slow manual sampling with verifiable digital records.'
   },
   gesture: {
     title: 'Hand Gesture Recognition Virtual Mouse',
@@ -210,6 +224,42 @@ function setupProjectModals() {
           <h4 style="font-size:1.15rem; font-weight:700; color:var(--text-primary); margin-bottom:8px;">Executive Overview</h4>
           <p style="color:var(--text-secondary); line-height:1.7;">${data.overview}</p>
         </div>
+
+        ${data.gallery && data.gallery.length > 0 ? `
+          <div style="margin-bottom:24px;">
+            <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:12px; flex-wrap:wrap; gap:8px;">
+              <h4 style="font-size:1.05rem; font-weight:700; color:#ffffff; display:flex; align-items:center; gap:8px;">
+                <span>📸 Authentic Hackathon Photos & Presentation</span>
+              </h4>
+              <span style="font-size:0.72rem; background:#059669; color:#ffffff; padding:3px 8px; border-radius:4px; font-weight:600; font-family:var(--font-mono);">SIH 2026 EVIDENCE</span>
+            </div>
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:14px;">
+              ${data.gallery.map(item => `
+                <div style="border:1px solid #334155; border-radius:4px; overflow:hidden; background:#0b1120;">
+                  <div style="height:210px; overflow:hidden; background:#000;">
+                    <img src="${item.src}" alt="${item.caption}" style="width:100%; height:100%; object-fit:cover; display:block;" />
+                  </div>
+                  <div style="padding:10px 12px; font-size:0.78rem; color:#94a3b8; font-family:var(--font-mono); border-top:1px solid #1e293b;">
+                    ${item.caption}
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        ` : ''}
+
+        ${data.liveLink ? `
+          <div style="margin-bottom:20px; padding:14px; background:#1e293b; border:1px solid #334155; border-radius:4px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px;">
+            <div>
+              <div style="color:#ffffff; font-weight:600; font-size:0.92rem;">🌐 Live System Deployment</div>
+              <div style="color:#94a3b8; font-size:0.8rem;">Access live running instance or project demo</div>
+            </div>
+            <a href="${data.liveLink}" target="_blank" rel="noopener noreferrer" class="btn btn-glow-blue btn-sm" style="display:inline-flex; align-items:center; gap:6px;">
+              <span>Open Live Demo</span>
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </a>
+          </div>
+        ` : ''}
 
         <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-bottom:24px;">
           <div style="padding:18px; background:var(--bg-card-subtle); border:1px solid var(--border-glass); border-radius:12px;">
