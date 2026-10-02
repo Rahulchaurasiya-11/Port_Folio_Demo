@@ -1,6 +1,7 @@
 import './style.css';
 import { initThreeScene } from './three-scene.js';
 import confetti from 'canvas-confetti';
+import { soundFX } from './audio.js';
 
 /* ===================================================================
    VERIFIED PROJECTS ARCHITECTURE DATA FOR DEEP DIVE MODAL
