@@ -8,30 +8,119 @@ import { soundFX } from './audio.js';
    =================================================================== */
 const PROJECTS_DATA = {
   scrap: {
-    title: 'AI-Based Scrap & Recycling Management System',
-    category: 'Enterprise Backend System | Industrial AI',
-    client: 'Hindalco Industries Pvt. Ltd. (2 Months Internship)',
-    image: './images/project-scrap.jpg',
-    tags: ['Java', 'Spring Boot', 'MySQL', 'JPA / Hibernate', 'HTML/CSS', 'REST APIs', 'ER Modeling'],
-    overview: 'Developed an enterprise backend solution for industrial scrap tracking, automated inventory classification, and recycling analytics at Hindalco Industries Pvt. Ltd. Built REST APIs for reporting modules.',
-    problem: 'Manufacturing operations produce complex categories of metal scrap. Tracking manual inventory led to discrepancies in recycling weights, batch allocation delays, and difficult waste reduction reporting.',
-    solution: 'Designed normalized database schemas and Entity-Relationship (ER) diagrams in MySQL, and implemented core backend logic using Java Spring Boot for tracking scrap inventory, generating analytics reports, and managing waste reduction metrics.',
-    keyFeatures: [
-      'Automated inventory classification for industrial scrap flows',
-      'Normalized relational database schema with strict ER relationship design',
-      'Optimized MySQL queries for rapid scrap retrieval and batch monitoring',
-      'REST APIs for executive waste reduction metrics and recycling reports',
-      'Collaboration with senior engineers following industrial software workflows'
+    title: '1. AI-Based Scrap & Recycling Management System',
+    category: 'Enterprise Industrial AI & Full-Stack Platform',
+    client: 'Hindalco Industries Limited (Aditya Birla Group) • 2 Months Vocational Internship',
+    image: './images/hindalco/hindalco-dashboard.jpg',
+    tags: ['Aditya Birla Group', 'Hindalco IT', 'Node.js & Express', 'Java Spring Boot', 'MySQL & MongoDB', 'Python ML', 'Scikit-Learn', 'REST APIs'],
+    pdfReport: {
+      url: './Hindalco_AI_Scrap_Management_Project_Report.pdf',
+      title: 'Official 20-Page Project Report (PDF)',
+      subtitle: 'Complete Academic & Vocational Internship Report signed by Mukul Shrivastava'
+    },
+    metaBadges: [
+      { icon: '🏢', label: 'Hindalco Industries Ltd, Renukoot (Aditya Birla Group)' },
+      { icon: '📅', label: '15 June 2026 – 15 August 2026 (2 Months Internship)' },
+      { icon: '👨‍🏫', label: 'Mentor: Mukul Shrivastava (IT Department)' },
+      { icon: '🪪', label: 'Authorized Gate Pass PS No: V9946125' },
+      { icon: '⭐', label: 'Guide Evaluation: 10/10 EXCELLENT' }
     ],
-    backendArchitecture: 'Engineered using Spring Boot layered architecture (Controllers, Service, Repositories). Utilized Spring Data JPA / Hibernate to execute optimized queries against a normalized MySQL database.',
-    impact: 'Streamlined plant floor scrap tracking, automated waste reduction reporting, and established data modeling best practices for industrial recycling workflows.'
+    overview: 'During my 2-month summer vocational internship at Hindalco Industries Limited (Aditya Birla Group, Renukoot Plant), I developed an end-to-end AI-Based Scrap Management & Recycling Optimization System for the IT Department. The system replaced legacy manual registers and spreadsheets with a centralized, real-time digital platform that tracks multi-category scrap (Smelter Plant, Alumina Refinery, Rolling Mill), calculates dynamic recycling rates, generates automated PDF audit reports, and runs Scikit-Learn regression models to forecast future scrap trends.',
+    learnings: [
+      {
+        title: 'Enterprise Server Room Operations & Infrastructure',
+        icon: '🖥️',
+        desc: 'Gained first-hand operational knowledge of enterprise on-premise server room environments: multi-rack server configurations, structured cable patch panels, industrial UPS battery backup redundancy, cooling/thermal regulation, server diagnostics, and physical & network security protocols required in a Fortune 500 manufacturing facility.'
+      },
+      {
+        title: 'Cross-Functional Team Collaboration & Industrial Operations',
+        icon: '🤝',
+        desc: 'Collaborated daily across departments—coordinating between the central IT team, the Training & Development Centre (TRG Centre under Mr. Sebastian Jose), and shop-floor plant supervisors across Smelter Plant, Alumina Refinery, and Rolling Mills to capture real industrial operational workflows.'
+      },
+      {
+        title: 'Mentorship & Enterprise Engineering Standards',
+        icon: '🎓',
+        desc: 'Worked under the direct guidance of IT Mentor Mr. Mukul Shrivastava. Learned enterprise software development lifecycles: gathering real operational requirements, 3NF database schema normalization, designing robust REST API contracts, exception handling, and validating AI model predictions on real plant data.'
+      }
+    ],
+    credentials: [
+      {
+        src: './images/hindalco/hindalco-id-pass.jpg',
+        title: 'Official Visitor / Summer Intern Pass',
+        caption: '🪪 Authorized Gate Pass PS No: V9946125 | Hindalco Industries Limited'
+      },
+      {
+        src: './images/hindalco/hindalco-project-synopsis.jpg',
+        title: 'Official Project / Study Synopsis Sheet',
+        caption: '📋 Synopsis Sheet: 6 Project Stages & Guide Remark: EXCELLENT'
+      },
+      {
+        src: './images/hindalco/hindalco-training-feedback.jpg',
+        title: 'Vocational Trainees Feedback Form',
+        caption: '⭐ Training Feedback Form: 10/10 Rating & Successful Completion'
+      }
+    ],
+    screenshots: [
+      {
+        src: './images/hindalco/hindalco-dashboard.jpg',
+        title: 'Centralized Plant Dashboard',
+        caption: '1. Executive overview of total generated scrap, active departments & plant locations'
+      },
+      {
+        src: './images/hindalco/hindalco-scrap-entry.jpg',
+        title: 'Scrap Entry & Logging Module',
+        caption: '2. Real-time scrap logging (Aluminum, Copper Wire, Iron Slag, weights & status)'
+      },
+      {
+        src: './images/hindalco/hindalco-inventory.jpg',
+        title: 'Warehouse Inventory Management',
+        caption: '3. Real-time available stock (1,600+ Kg) categorized by material type'
+      },
+      {
+        src: './images/hindalco/hindalco-recycling.jpg',
+        title: 'Industrial Recycling Management',
+        caption: '4. Logging recycled scrap into reusable warehouse inventory with efficiency metrics'
+      },
+      {
+        src: './images/hindalco/hindalco-prediction.jpg',
+        title: 'AI Prediction & Trend Forecasting',
+        caption: '5. Machine learning forecast module predicting monthly scrap trends (Pandas/Scikit-Learn)'
+      },
+      {
+        src: './images/hindalco/hindalco-pdf-audit.jpg',
+        title: 'Automated PDF Audit Report Generator',
+        caption: '6. Generates official downloadable PDF audit report with company header & signature line'
+      },
+      {
+        src: './images/hindalco/hindalco-architecture.jpg',
+        title: '4-Tier Full-Stack Architecture Layout',
+        caption: '7. Presentation Tier (HTML/JS) ⇄ Application Server (server.js) ⇄ MongoDB ⇄ Python ML'
+      },
+      {
+        src: './images/hindalco/hindalco-login.jpg',
+        title: 'Role-Based Authentication Module',
+        caption: '8. Secure authentication and access control for Admin, Manager, and Operators'
+      }
+    ],
+    problem: 'Hindalco manufacturing facilities (Rolling Mills, Smelters, Alumina Refineries) generated tons of metal scrap daily. Tracking was handled through fragmented paper registers and Excel sheets—causing data entry errors, delayed audit reporting, zero predictive foresight on scrap surges, and poor scrap-to-recycling efficiency visibility.',
+    solution: 'Engineered a modern 4-tier Full-Stack and AI platform integrating a responsive Web client, modular REST application server (Node.js/Express & Java Spring Boot), normalized database persistence (MySQL/MongoDB), and a Python Scikit-Learn predictive engine to forecast scrap trends and automate compliance PDF reporting.',
+    keyFeatures: [
+      'Real-Time Departmental Scrap Intake: Logs weight, department origin, material classification, and timestamp across manufacturing units',
+      'Continuous Warehouse Inventory Monitoring: Instant stock balances (Aluminum Ingot, Steel, Copper, Slag) with automated reorder thresholds',
+      'Automated Recycling Rate Analytics: Computes live Recycling Rate % = (Recycled Scrap ÷ Total Scrap Generated) × 100',
+      'AI Prediction Module (Linear Regression & Random Forest): Analyzes historical waste clusters to forecast upcoming quarterly scrap spikes',
+      'Automated Executive PDF Audit Reports: Instant 1-click generation of verifiable plant scrap audit documentation',
+      'Role-Based Access Control (RBAC): Tailored permissions for Plant Operators, Department Managers, and IT Administrators'
+    ],
+    backendArchitecture: '4-Tier Enterprise Architecture: Presentation Layer (HTML5, CSS3, JavaScript ES6+, Fetch API) ➔ Application Server (Node.js & Express.js REST API server.js / Spring Boot Service Layer) ➔ Data Persistence (Normalized MySQL schemas + MongoDB document store) ➔ AI Intelligence Pipeline (Python, Pandas, NumPy, Scikit-Learn predictive modeling streamed via JSON payloads).',
+    impact: 'Successfully completed 2-month summer internship with a 10/10 rating and "EXCELLENT" guide remark from Mukul Shrivastava. Replaced manual paperwork with real-time operational traceability and automated compliance audits.'
   },
   metrology: {
     title: 'Legal Metrology AI Compliance System (SIH 2026 — PS #SIH26034)',
     category: 'Regulatory AI & Computer Vision | Smart India Hackathon 2026',
     client: 'SIH 2026 • Team Govt2047 (Internal Level Selected)',
     image: './images/sih-team-govt2047.jpg',
-    liveLink: '', // Ready for user's live deployment link
+    liveLink: '',
     gallery: [
       {
         src: './images/sih-team-govt2047.jpg',
@@ -214,18 +303,121 @@ function setupProjectModals() {
 
     modalContent.innerHTML = `
       <div class="modal-project-view">
-        <div class="modal-project-hero-img-wrap" style="position:relative; border-radius:12px; overflow:hidden; margin-bottom:24px; max-height:360px;">
+        <!-- Hero Image & Tags Banner -->
+        <div class="modal-project-hero-img-wrap" style="position:relative; border-radius:10px; overflow:hidden; margin-bottom:20px; max-height:360px; border:1px solid #30363D;">
           <img src="${data.image}" alt="${data.title}" style="width:100%; height:100%; object-fit:cover; display:block;" />
-          <div style="position:absolute; bottom:14px; left:14px; display:flex; flex-wrap:wrap; gap:6px;">
-            ${data.tags.map(t => `<span class="tag-accent" style="background:rgba(10,15,29,0.9);">${t}</span>`).join('')}
+          <div style="position:absolute; bottom:12px; left:12px; display:flex; flex-wrap:wrap; gap:6px;">
+            ${data.tags.map(t => `<span class="tag-accent" style="background:rgba(13,17,23,0.92); border-color:#30363D; color:#58A6FF;">${t}</span>`).join('')}
           </div>
         </div>
 
+        <!-- Meta Badges Strip -->
+        ${data.metaBadges && data.metaBadges.length > 0 ? `
+          <div class="modal-meta-strip">
+            ${data.metaBadges.map(b => `
+              <div class="modal-meta-pill">
+                <span>${b.icon}</span> <span>${b.label}</span>
+              </div>
+            `).join('')}
+          </div>
+        ` : ''}
+
+        <!-- Download Project Report PDF Banner -->
+        ${data.pdfReport ? `
+          <div style="margin-bottom:24px; padding:18px 22px; background:linear-gradient(135deg, rgba(47,129,247,0.12), rgba(35,134,54,0.1)); border:1px solid #30363D; border-radius:10px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:14px;">
+            <div>
+              <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px;">
+                <span style="font-size:1.3rem;">📄</span>
+                <span style="font-weight:700; color:#F0F6FC; font-size:1.05rem;">${data.pdfReport.title}</span>
+                <span style="background:#238636; color:#ffffff; font-size:0.72rem; padding:2px 8px; border-radius:4px; font-weight:600; font-family:var(--font-mono);">20 PAGES SIGNED</span>
+              </div>
+              <div style="font-size:0.84rem; color:#8B949E; line-height:1.5;">
+                ${data.pdfReport.subtitle}
+              </div>
+            </div>
+            <a href="${data.pdfReport.url}" target="_blank" rel="noopener noreferrer" download="Hindalco_AI_Scrap_Management_Project_Report.pdf" class="btn btn-glow-blue btn-sm" style="display:inline-flex; align-items:center; gap:8px;">
+              <span>Download Report (PDF)</span>
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            </a>
+          </div>
+        ` : ''}
+
+        <!-- Executive Overview -->
         <div style="margin-bottom:24px;">
-          <h4 style="font-size:1.15rem; font-weight:700; color:var(--text-primary); margin-bottom:8px;">Executive Overview</h4>
-          <p style="color:var(--text-secondary); line-height:1.7;">${data.overview}</p>
+          <h4 style="font-size:1.15rem; font-weight:700; color:#F0F6FC; margin-bottom:8px;">Executive Overview</h4>
+          <p style="color:#8B949E; line-height:1.7; font-size:0.94rem;">${data.overview}</p>
         </div>
 
+        <!-- Verified Internship Credentials & ID Pass -->
+        ${data.credentials && data.credentials.length > 0 ? `
+          <div style="margin-bottom:28px;">
+            <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:14px; flex-wrap:wrap; gap:8px;">
+              <h4 style="font-size:1.05rem; font-weight:700; color:#F0F6FC; display:flex; align-items:center; gap:8px;">
+                <span>🪪 Official Internship Credentials & Authorized ID Pass</span>
+              </h4>
+              <span style="font-size:0.72rem; background:#1f6feb; color:#ffffff; padding:3px 8px; border-radius:4px; font-weight:600; font-family:var(--font-mono);">HINDALCO VERIFIED</span>
+            </div>
+            <div class="evidence-grid">
+              ${data.credentials.map(c => `
+                <div class="evidence-card">
+                  <div class="evidence-card-media" onclick="window.open('${c.src}', '_blank')" title="Click to view full image in high resolution">
+                    <img src="${c.src}" alt="${c.title}" loading="lazy" />
+                  </div>
+                  <div class="evidence-card-info">
+                    <div class="evidence-card-title">${c.title}</div>
+                    <div class="evidence-card-desc">${c.caption}</div>
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        ` : ''}
+
+        <!-- Industrial Learnings (Server Room, Teamwork, Mentorship) -->
+        ${data.learnings && data.learnings.length > 0 ? `
+          <div style="margin-bottom:28px;">
+            <h4 style="font-size:1.05rem; font-weight:700; color:#F0F6FC; margin-bottom:14px; display:flex; align-items:center; gap:8px;">
+              <span>💡 Industrial Exposure & Professional Learnings</span>
+            </h4>
+            <div style="display:flex; flex-direction:column; gap:12px;">
+              ${data.learnings.map(l => `
+                <div style="padding:16px 18px; background:#0D1117; border:1px solid #30363D; border-left:4px solid #58A6FF; border-radius:8px;">
+                  <h5 style="color:#58A6FF; font-size:0.96rem; font-weight:700; margin-bottom:6px; display:flex; align-items:center; gap:8px;">
+                    <span>${l.icon}</span> <span>${l.title}</span>
+                  </h5>
+                  <p style="font-size:0.88rem; color:#8B949E; line-height:1.65; margin:0;">${l.desc}</p>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        ` : ''}
+
+        <!-- Working System Screenshots Gallery -->
+        ${data.screenshots && data.screenshots.length > 0 ? `
+          <div style="margin-bottom:28px;">
+            <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:14px; flex-wrap:wrap; gap:8px;">
+              <h4 style="font-size:1.05rem; font-weight:700; color:#F0F6FC; display:flex; align-items:center; gap:8px;">
+                <span>📸 Real Working System Walkthrough & Screenshots (8 Screens)</span>
+              </h4>
+              <span style="font-size:0.72rem; background:#238636; color:#ffffff; padding:3px 8px; border-radius:4px; font-weight:600; font-family:var(--font-mono);">LIVE APPLICATION</span>
+            </div>
+            <div class="evidence-grid">
+              ${data.screenshots.map(s => `
+                <div class="evidence-card">
+                  <div class="evidence-card-media" onclick="window.open('${s.src}', '_blank')" title="Click to view full image in high resolution">
+                    <img src="${s.src}" alt="${s.title}" loading="lazy" />
+                  </div>
+                  <div class="evidence-card-info">
+                    <div class="evidence-card-title">${s.title}</div>
+                    <div class="evidence-card-desc">${s.caption}</div>
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        ` : ''}
+
+        <!-- Gallery for SIH (metrology) -->
         ${data.gallery && data.gallery.length > 0 ? `
           <div style="margin-bottom:24px;">
             <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:12px; flex-wrap:wrap; gap:8px;">
@@ -237,7 +429,7 @@ function setupProjectModals() {
             <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:14px;">
               ${data.gallery.map(item => `
                 <div style="border:1px solid #334155; border-radius:4px; overflow:hidden; background:#0b1120;">
-                  <div style="height:210px; overflow:hidden; background:#000;">
+                  <div style="height:210px; overflow:hidden; background:#000; cursor:zoom-in;" onclick="window.open('${item.src}', '_blank')">
                     <img src="${item.src}" alt="${item.caption}" style="width:100%; height:100%; object-fit:cover; display:block;" />
                   </div>
                   <div style="padding:10px 12px; font-size:0.78rem; color:#94a3b8; font-family:var(--font-mono); border-top:1px solid #1e293b;">
@@ -249,50 +441,41 @@ function setupProjectModals() {
           </div>
         ` : ''}
 
-        ${data.liveLink ? `
-          <div style="margin-bottom:20px; padding:14px; background:#1e293b; border:1px solid #334155; border-radius:4px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px;">
-            <div>
-              <div style="color:#ffffff; font-weight:600; font-size:0.92rem;">🌐 Live System Deployment</div>
-              <div style="color:#94a3b8; font-size:0.8rem;">Access live running instance or project demo</div>
-            </div>
-            <a href="${data.liveLink}" target="_blank" rel="noopener noreferrer" class="btn btn-glow-blue btn-sm" style="display:inline-flex; align-items:center; gap:6px;">
-              <span>Open Live Demo</span>
-              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-            </a>
-          </div>
-        ` : ''}
-
-        <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-bottom:24px;">
-          <div style="padding:18px; background:var(--bg-card-subtle); border:1px solid var(--border-glass); border-radius:12px;">
-            <h5 style="color:var(--rose); font-size:0.95rem; font-weight:700; margin-bottom:6px;">⚠️ The Engineering Problem</h5>
-            <p style="font-size:0.88rem; color:var(--text-secondary); line-height:1.6;">${data.problem}</p>
+        <!-- Problem & Architectural Solution Cards -->
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:16px; margin-bottom:24px;">
+          <div style="padding:18px; background:#0D1117; border:1px solid #30363D; border-left:4px solid #F85149; border-radius:8px;">
+            <h5 style="color:#F85149; font-size:0.95rem; font-weight:700; margin-bottom:6px;">⚠️ The Engineering Problem</h5>
+            <p style="font-size:0.88rem; color:#8B949E; line-height:1.6; margin:0;">${data.problem}</p>
           </div>
 
-          <div style="padding:18px; background:var(--bg-card-subtle); border:1px solid var(--border-glass); border-radius:12px;">
-            <h5 style="color:var(--cyan); font-size:0.95rem; font-weight:700; margin-bottom:6px;">💡 The Architectural Solution</h5>
-            <p style="font-size:0.88rem; color:var(--text-secondary); line-height:1.6;">${data.solution}</p>
+          <div style="padding:18px; background:#0D1117; border:1px solid #30363D; border-left:4px solid #58A6FF; border-radius:8px;">
+            <h5 style="color:#58A6FF; font-size:0.95rem; font-weight:700; margin-bottom:6px;">💡 The Architectural Solution</h5>
+            <p style="font-size:0.88rem; color:#8B949E; line-height:1.6; margin:0;">${data.solution}</p>
           </div>
         </div>
 
+        <!-- Key Architectural Features List -->
         <div style="margin-bottom:24px;">
-          <h4 style="font-size:1.15rem; font-weight:700; color:var(--text-primary); margin-bottom:12px;">Key Architectural Features</h4>
-          <ul style="list-style:none; display:flex; flex-direction:column; gap:8px;">
+          <h4 style="font-size:1.15rem; font-weight:700; color:#F0F6FC; margin-bottom:12px;">Key Architectural Features</h4>
+          <ul style="list-style:none; display:flex; flex-direction:column; gap:8px; padding:0; margin:0;">
             ${data.keyFeatures.map(feat => `
-              <li style="display:flex; align-items:flex-start; gap:10px; font-size:0.9rem; color:var(--text-secondary);">
-                <span style="color:var(--cyan); font-weight:800;">▹</span> ${feat}
+              <li style="display:flex; align-items:flex-start; gap:10px; font-size:0.9rem; color:#8B949E;">
+                <span style="color:#58A6FF; font-weight:800;">▹</span> ${feat}
               </li>
             `).join('')}
           </ul>
         </div>
 
-        <div style="padding:18px; background:rgba(0,242,254,0.05); border:1px solid rgba(0,242,254,0.2); border-radius:12px; margin-bottom:24px;">
-          <h4 style="font-size:1.05rem; font-weight:700; color:var(--cyan); margin-bottom:6px;">⚙️ Backend & Systems Architecture</h4>
-          <p style="font-size:0.9rem; color:var(--text-secondary); line-height:1.65;">${data.backendArchitecture}</p>
+        <!-- Backend Architecture -->
+        <div style="padding:18px; background:#0D1117; border:1px solid #30363D; border-left:4px solid #58A6FF; border-radius:8px; margin-bottom:20px;">
+          <h4 style="font-size:1.05rem; font-weight:700; color:#58A6FF; margin-bottom:6px;">⚙️ Backend & Systems Architecture</h4>
+          <p style="font-size:0.9rem; color:#8B949E; line-height:1.65; margin:0;">${data.backendArchitecture}</p>
         </div>
 
-        <div style="padding:18px; background:rgba(16,185,129,0.05); border:1px solid rgba(16,185,129,0.2); border-radius:12px;">
-          <h4 style="font-size:1.05rem; font-weight:700; color:var(--emerald); margin-bottom:6px;">📊 Practical Impact & Results</h4>
-          <p style="font-size:0.9rem; color:var(--text-secondary); line-height:1.65;">${data.impact}</p>
+        <!-- Practical Results & Impact -->
+        <div style="padding:18px; background:#0D1117; border:1px solid #30363D; border-left:4px solid #3FB950; border-radius:8px;">
+          <h4 style="font-size:1.05rem; font-weight:700; color:#3FB950; margin-bottom:6px;">📊 Practical Impact & Results</h4>
+          <p style="font-size:0.9rem; color:#8B949E; line-height:1.65; margin:0;">${data.impact}</p>
         </div>
       </div>
     `;
