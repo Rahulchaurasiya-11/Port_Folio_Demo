@@ -10,7 +10,7 @@ const PROJECTS_DATA = {
     title: 'AI-Based Scrap & Recycling Management System',
     category: 'Enterprise Backend System | Industrial AI',
     client: 'Hindalco Industries Pvt. Ltd. (2 Months Internship)',
-    image: '/images/project-scrap.jpg',
+    image: './images/project-scrap.jpg',
     tags: ['Java', 'Spring Boot', 'MySQL', 'JPA / Hibernate', 'HTML/CSS', 'REST APIs', 'ER Modeling'],
     overview: 'Developed an enterprise backend solution for industrial scrap tracking, automated inventory classification, and recycling analytics at Hindalco Industries Pvt. Ltd. Built REST APIs for reporting modules.',
     problem: 'Manufacturing operations produce complex categories of metal scrap. Tracking manual inventory led to discrepancies in recycling weights, batch allocation delays, and difficult waste reduction reporting.',
@@ -29,16 +29,16 @@ const PROJECTS_DATA = {
     title: 'Legal Metrology AI Compliance System (SIH 2026 — PS #SIH26034)',
     category: 'Regulatory AI & Computer Vision | Smart India Hackathon 2026',
     client: 'SIH 2026 • Team Govt2047 (Internal Level Selected)',
-    image: '/images/sih-team-govt2047.jpg',
+    image: './images/sih-team-govt2047.jpg',
     liveLink: '', // Ready for user's live deployment link
     gallery: [
       {
-        src: '/images/sih-team-govt2047.jpg',
+        src: './images/sih-team-govt2047.jpg',
         title: 'Team Govt2047 Hackathon Cohort',
         caption: '👥 Team Govt2047 at Hackathon — Internal Selection Round'
       },
       {
-        src: '/images/sih-presentation-screen.jpg',
+        src: './images/sih-presentation-screen.jpg',
         title: 'SIH 2026 Problem Statement #SIH26034 & Presentation',
         caption: '📋 Official SIH26034 Presentation Screen & Team Slip #24 (Govt2047)'
       }
@@ -62,7 +62,7 @@ const PROJECTS_DATA = {
     title: 'Hand Gesture Recognition Virtual Mouse',
     category: 'Computer Vision | Human-Computer Interaction (HCI)',
     client: 'Autonomous Engineering Project',
-    image: '/images/project-gesture.jpg',
+    image: './images/project-gesture.jpg',
     tags: ['Python', 'OpenCV', 'MediaPipe', 'Real-time HCI', 'Signal Smoothing', 'PyAutoGUI'],
     overview: 'Developed a real-time computer vision application enabling touchless human-computer interaction using hand gestures for cursor movement and click operations.',
     problem: 'Physical computer mice are unsuited for sterile environments (medical/operating rooms, industrial cleanrooms) and pose accessibility barriers for users with physical contact constraints.',
